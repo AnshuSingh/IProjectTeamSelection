@@ -25,10 +25,11 @@ public class RandomCreation extends MVCPortlet {
 	public void createTeams(ActionRequest actionRequest,
 			ActionResponse actionResponse)
 			throws IOException, PortletException {
-			String project = ParamUtil.getString(actionRequest, "project");
+			//String project = ParamUtil.getString(actionRequest, "project");
 			String ctr =  ParamUtil.getString(actionRequest, "numofStudents");
 			int studentCount;
 			List<Student> students;
+			List<Projectdetail> projects;
 			Random rand = new Random();
 			TeamImpl team = new TeamImpl();
 				// set primary key
@@ -39,7 +40,10 @@ public class RandomCreation extends MVCPortlet {
 				e.printStackTrace();
 				}
 				team.setTeamID(teamID );
-				team.setProjectTitle(project);
+				int projectCount = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
+				projects = ProjectdetailLocalServiceUtil.getProjectdetails(0,	projectCount);
+				int choiceP = rand.nextInt(projects.size());
+				team.setProjectTitle(projects.get(choiceP).getProjectTitle());
 				// set UI fields
 			try {
 				studentCount = StudentLocalServiceUtil.getStudentsCount();
