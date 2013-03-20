@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dropdowns>
+	<dropdown name="computingSkills">
+		<options>
+			<key>labView</key>
+			<value>Lab View</value>
+		</options>
+
+		<options>
+			<key>microcontroller</key>
+			<value>Microcontroller</value>
+		</options>
+		<options>
+			<key>webDevelopment</key>
+			<value>Web Devlopment</value>
+		</options>
+		<options>
+			<key>guiAndProgramming</key>
+			<value>GUI and Programming</value>
+		</options>
+		<options>
+			<key>electronics</key>
+			<value>Electronics</value>
+		</options>
+		<options>
+			<key>embeddedSystems</key>
+			<value>Embedded Systems</value>
+		</options>
+	</dropdown>
+	<dropdown name="mechanicalskills">
+		<options>
+			<key>Cadd</key>
+			<value>CADD</value>
+		</options>
+
+		<options>
+			<key>Fae</key>
+			<value>FAE</value>
+		</options>
+		<options>
+			<key>MachiningCNC</key>
+			<value>Machining CNC</value>
+		</options>
+		<options>
+			<key>ThermoFluids</key>
+			<value>Thermo Fluids</value>
+		</options>
+		<options>
+			<key>MechanicalDesign</key>
+			<value>Mechanical Design</value>
+		</options>
+		<options>
+			<key>FabricationWelding</key>
+			<value>Fabrication and Welding</value>
+		</options>
+	</dropdown>
+</dropdowns>
