@@ -14,6 +14,17 @@
 		<column name="projectrequiredskill" type="String"></column>
 		<column name="contact" type="String"></column>
 		<column name="status" type="String"></column>
+		 <column name="prefer1" type="String" />
+                <column name="prefer2" type="String" />
+                <column name="prefer3" type="String" />
+                <column name="prefer4" type="String" />
+                <column name="prefer5" type="String" />
+                <column name="mprefer1" type="String" />
+                <column name="mprefer2" type="String" />
+                <column name="mprefer3" type="String" />
+                <column name="mprefer4" type="String" />
+                <column name="mprefer5" type="String" />
+                
 		<!-- Audit fields -->
 		<column name="dateAdded" type="Date"></column>
 		<column name="dateModified" type="Date"></column>
