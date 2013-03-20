@@ -6,6 +6,19 @@
 int count = TeamLocalServiceUtil.getTeamsCount();
 List<Team> teams = TeamLocalServiceUtil.getTeams(0, count);
 %>
+
+<%
+PortletURL iteratorURL = renderResponse.createRenderURL();
+iteratorURL.setParameter("jspPage", "/html/manual/list.jsp");
+
+PortletURL deleteTeamURL = renderResponse.createActionURL();
+deleteTeamURL.setParameter(ActionRequest.ACTION_NAME, "deleteTeam");
+deleteTeamURL.setParameter("redirectURL", iteratorURL.toString());	
+
+PortletURL editTeamURL = renderResponse.createRenderURL();	
+editTeamURL.setParameter("jspPage", "/html/manual/update.jsp");
+%>
+
 <table border="1" width="90%" >
 <tr>
 <th align="center"> teamID </th>
@@ -24,6 +37,9 @@ List<Team> teams = TeamLocalServiceUtil.getTeams(0, count);
 <th align="center">Student 8</th>
 <th align="center">Student 9</th>
 <th align="center"> Date added </th>
+<th align="center"> Delete </th>
+<th align="center"> Edit </th>
+
 </tr>
 
 <%
@@ -45,8 +61,17 @@ for (Team team : teams) {
 <td><%= team.getStudent6() %> </td>
 <td><%= team.getStudent7() %> </td>
 <td><%= team.getStudent8() %> </td>
-<td><%= team.getStudent9() %> </td>
 <td><%= team.getDateAdded() %></td>
+<% deleteTeamURL.setParameter("TeamID", String.valueOf(team.getTeamID())); %>
+<td>
+<a href="<%= deleteTeamURL.toString() %>">Delete &raquo;</a>
+</td>
+<% editTeamURL.setParameter("TeamID", String.valueOf(team.getTeamID())); %>
+<td>
+<a href="<%= editTeamURL.toString() %>">Edit &raquo;</a>
+</td>
+
+
 
 </tr>
 <%

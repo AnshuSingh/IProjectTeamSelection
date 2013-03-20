@@ -39,8 +39,8 @@ updateTeamsURL.toString() %>">
 	
 </select>
 <br ><br >
-<table width="80%">
-<th></th>
+<table width="80%" border=1>
+<th>select</th>
 <th>ASUID</th>
 <th>Name</th>
 <th>Department</th>
@@ -61,13 +61,10 @@ updateTeamsURL.toString() %>">
 
 	%>
 	
-	
-	
-	
 </table>
 <br ><br >
-<table width="80%">
-<th></th>
+<table width="80%" border=1 >
+<th>select</th>
 <th>ASUID</th>
 <th>Name</th>
 <th>Course</th>
@@ -93,9 +90,6 @@ updateTeamsURL.toString() %>">
 	%>
 
 </table><br /><br ><br >
-
-
-
 
 <input type="submit" value="Create Team">
 <p>
