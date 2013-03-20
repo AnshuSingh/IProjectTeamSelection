@@ -3,7 +3,7 @@
 <%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
 <%@page import="com.iproject.slayer.service.ProjectdetailLocalServiceUtil"%>
  <%@page import="com.iproject.slayer.model.Projectdetail"%>
- <%@page import="com.iproject.util.*"%>
+ <%@page import="com.asu.poly.iproject.teams.addProject.util.*"%>
  <%@page import="java.util.*"%>
 
  <script type="text/javascript"> 
