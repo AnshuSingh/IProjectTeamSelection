@@ -50,6 +50,17 @@ public class AddProject extends MVCPortlet {
 		String status = ParamUtil.getString(actionRequest, "status");
 		String link = ParamUtil.getString(actionRequest, "link");
 		
+		 String ch1 = ParamUtil.getString(actionRequest, "preference1");
+		 String ch2 = ParamUtil.getString(actionRequest, "preference2");
+		 String ch3 = ParamUtil.getString(actionRequest, "preference3");
+		 String ch4 = ParamUtil.getString(actionRequest, "preference4");
+		 String ch5 = ParamUtil.getString(actionRequest, "preference5");
+		 String ch6 = ParamUtil.getString(actionRequest, "mpreference1");
+		 String ch7 = ParamUtil.getString(actionRequest, "mpreference2");
+		 String ch8 = ParamUtil.getString(actionRequest, "mpreference3");
+		 String ch9 = ParamUtil.getString(actionRequest, "mpreference4");
+		 String ch10 = ParamUtil.getString(actionRequest, "mpreference5");
+		
 		/*String folder = getInitParameter("uploadFolder");
 		if(folder ==null || "".equalsIgnoreCase(folder)){
 		fileUpload(actionRequest,folder);
@@ -77,6 +88,16 @@ public class AddProject extends MVCPortlet {
 		project.setContact(contact);
 		project.setStatus(status);
 		project.setLink(link);
+		project.setPrefer1(ch1);
+		project.setPrefer2(ch2);
+		project.setPrefer3(ch3);
+		project.setPrefer4(ch4);
+		project.setPrefer5(ch5);
+		project.setMprefer1(ch6);
+		project.setMprefer2(ch7);
+		project.setMprefer3(ch8);
+		project.setMprefer4(ch9);
+		project.setMprefer5(ch10);
 		
 		if (projectId > 0L) {
 		modifyproject(project);
@@ -126,6 +147,24 @@ public class AddProject extends MVCPortlet {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 		}
+		}
+		
+		public void saveproject(ActionRequest actionRequest,
+			ActionResponse actionResponse) throws IOException, PortletException {
+
+		System.out.println("Saving data");
+		 
+		String prjtitle = ParamUtil.getString(actionRequest,"projectTitle");
+		String prjdesc = ParamUtil.getString(actionRequest,"projectdescription");
+		String prjsponsor = ParamUtil.getString(actionRequest,"sponsor");
+		String prjcontact = ParamUtil.getString(actionRequest,"contact");
+		System.out.println(prjtitle);
+		actionRequest.setAttribute("prjtitle", prjtitle);
+		actionRequest.setAttribute("prjdesc", prjdesc);
+		actionRequest.setAttribute("prjsponsor", prjsponsor);
+		actionRequest.setAttribute("prjcontact", prjcontact);
+		actionResponse.setRenderParameter("jspPage", "/html/addproject/reqskill.jsp");
+		
 		}
 		
 		public void deleteProject(ActionRequest actionRequest,
