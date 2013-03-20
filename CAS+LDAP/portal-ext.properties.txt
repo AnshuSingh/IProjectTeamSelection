@@ -1,0 +1,13 @@
+users.reminder.queries.enabled=false
+session.enable.url.with.session.id=false
+live.users.enabled=false
+
+cas.auth.enabled=true
+cas.import.from.ldap=true
+cas.login.url=https://weblogin.asu.edu/cas/login?service=https://iprojects.poly.asu.edu:8443/web/guest/iproject-team-selection
+cas.logout.url=https://weblogin.asu.edu/cas/logout
+cas.server.name=http://iprojects.poly.asu.edu:8080
+cas.server.url=https://weblogin.asu.edu/cas
+cas.service.url=
+cas.service.url=https://weblogin.asu.edu/cas
+cas.no.such.user.redirect.url=http://iprojects.poly.asu.edu:8080

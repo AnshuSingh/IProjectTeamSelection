@@ -1,0 +1,28 @@
+Base Provider URL: ldap://ds.asu.edu:389
+Base DN:           ou=People,o=asu.edu
+Principal:	   uid=iprojects_app,ou=ReadOnly,o=asu.edu
+Password:           	<password>
+
+UserMapping
+Screen Name
+ 
+Password
+ 
+Email Address: mail
+ 
+Full Name : cn 
+ 
+First Name : givenname
+ 
+Middle Name : middlename
+ 
+Last Name : sn
+ 
+Job Title : title
+ 
+Portrait
+ 
+Group
+ 
+UUID: asuriteid
+ 
