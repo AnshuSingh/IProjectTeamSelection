@@ -4,6 +4,9 @@
 /*PortletURL updateprojectURL = renderResponse.createActionURL();
 updateprojectURL.setParameter(ActionRequest.ACTION_NAME, "updateproject");*/
 
+PortletURL saveURL = renderResponse.createActionURL();
+saveURL.setParameter(ActionRequest.ACTION_NAME, "saveproject");
+
 Projectdetail project = new ProjectdetailImpl();
 long prjId = ParamUtil.getLong(request, "projectID");
 if (prjId > 0L) {
@@ -27,7 +30,7 @@ message="Project title is required." ></liferay-ui:error>
 <aui:input type="hidden" name="projectId" value="<%= String.valueOf(project.getProjectID()) %>"/>
 <aui:input type="text" size="103" name="projectTitle" label="Project Title" value="<%= project.getProjectTitle() %>" />
 <br/>
-<aui:input type="textarea" rows="10" cols="100" name="projectdescription" label="Project Description" value="<%= project.getProjectdescription() %>"/>
+<!--aui:input type="textarea" rows="10" cols="100" name="projectdescription" label="Project Description" value="<%= project.getProjectdescription() %>"/>-->
 <br/>
 <aui:input type="text" size="103" name="sponsor" label="Sponsor" value="<%= project.getSponsor() %>"/>
 <br/>
@@ -54,6 +57,8 @@ message="Project title is required." ></liferay-ui:error>
 <br/>
 <br/>
 <br/>
+
+<aui:input align="right" name="" type="submit" value="Save"/>
 
 <!--aui:button type="submit" value="Save"/-->
 </aui:form>
