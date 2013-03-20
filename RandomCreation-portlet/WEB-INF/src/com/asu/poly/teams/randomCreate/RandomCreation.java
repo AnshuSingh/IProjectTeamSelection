@@ -17,6 +17,8 @@ import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.asu.poly.teams.randomCreate.slayer.model.Projectdetail;
+import com.asu.poly.teams.randomCreate.slayer.service.ProjectdetailLocalServiceUtil;
 
 /**
  * Portlet implementation class RandomCreation
