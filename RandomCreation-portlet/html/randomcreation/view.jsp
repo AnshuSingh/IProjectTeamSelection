@@ -20,18 +20,48 @@ ActionRequest.ACTION_NAME, "createTeams");
 
 <form name="<portlet:namespace/>fm" method="POST" action="<%=
 updateTeamsURL.toString() %>">
-Select iProject: <select name="project">
-<option></option>
 <%
 		for (Projectdetail project : projects) {
 	%>
-	<option> <%= project.getProjectTitle() %></option>
+	 <%= project.getProjectTitle() %>
 	<%
 		}
 	%>
-</select>
 <br ><br >
-Enter the number of students: <input type="number" name="numofStudents">
+Enter the number of students: <select type="number" name="numofStudents"><option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option></select><br >
+Enter the weightage to be assigned for the following:<br />
+<table border ="0">
+<tr><td>
+Student Preference:</td><td> </td><td>
+<select name="pref" ><option>0-1</option>
+<option>2-3</option>
+<option>4-5</option>
+<option>6-7</option>
+<option>8-10</option></select></td></tr><tr><td>
+Student skills:</td><td> </td><td>
+<select name="skills" ><option>0-1</option>
+<option>2-3</option>
+<option>4-5</option>
+<option>6-7</option>
+<option>8-10</option></select></td></tr><tr><td>
+GPA:</td><td> </td><td>
+<select name="gpa" ><option>0-1</option>
+<option>2-3</option>
+<option>4-5</option>
+<option>6-7</option>
+<option>8-10</option></select></td></tr><tr><td>
+Student Availability:</td><td> </td><td>
+<select name="avail" ><option>0-1</option>
+<option>2-3</option>
+<option>4-5</option>
+<option>6-7</option>
+<option>8-10</option></select></td></tr>
+</table>
 
 <br /><br ><br >
 
@@ -39,5 +69,8 @@ Enter the number of students: <input type="number" name="numofStudents">
 </form>
 
 <a href="<%= listteamsURL.toString() %>">Show all Teams &raquo;</a>
+
+
+
 
 
