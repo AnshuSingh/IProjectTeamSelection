@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.asu.poly.teams.randomCreate;
 
 import java.io.IOException;
@@ -30,6 +29,10 @@ public class RandomCreation extends MVCPortlet {
 			throws IOException, PortletException {
 			//String project = ParamUtil.getString(actionRequest, "project");
 			String ctr =  ParamUtil.getString(actionRequest, "numofStudents");
+			String wt_gpa =  ParamUtil.getString(actionRequest, "gpa");
+			String wt_pref  =  ParamUtil.getString(actionRequest, "pref");
+			String wt_skills =  ParamUtil.getString(actionRequest, "skills");
+			String wt_avail =  ParamUtil.getString(actionRequest, "avail");
 			int studentCount;
 			List<Student> students;
 			List<Projectdetail> projects;
