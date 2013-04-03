@@ -21,75 +21,76 @@ count);
 <aui:form name="<portlet:namespace/>fm"  id ="fm" method="POST" action="<%=
 updatePreferencesURL.toString() %>">
 <h1>Student Preferences</h1><br>
+<aui:fieldset>
 Select your preferences below:<br><br>
 <p>
+</p>
 Preference 1:
-<aui:fieldset>
-<aui:select name="preference1"  label ="preference1">
 
-<aui:option>Select a project</aui:option>
+<aui:select  name="preference1"  >
+<aui:option value= "-1">
+<liferay-ui:message key = "please choose"/>
+</aui:option>
 
 <%
 for (Projectdetail project : projects) {
 %>
-
-<aui:option> <%= project.getProjectTitle() %></aui:option>
-
+<aui:option value = "<%= project.getProjectID() %>" > 
+    <%= project.getProjectTitle() %>             
+</aui:option>
 <%
 }
 %>
-
 </aui:select>
-</aui:fieldset>
+</p>
+<p>
+Preference 2: <aui:select name="preference2">
+<aui:option></aui:option>
+<%
+for (Projectdetail project : projects) {
+%>
+<aui:option> <%= project.getProjectTitle() %></aui:option>
+<%
+}
+%>
+</aui:select>
+</p>
+<p>
+Preference 3: <aui:select name="preference3">
+<aui:option></aui:option>
+<%
+for (Projectdetail project : projects) {
+%>
+<aui:option> <%= project.getProjectTitle() %></aui:option>
+<%
+}
+%>
+</aui:select>
+</p>
+<p>
+Preference 4: <aui:select name="preference4" >
+<aui:option></aui:option>
+<%
+for (Projectdetail project : projects) {
+%>
+<aui:option> <%= project.getProjectTitle() %></aui:option>
+<%
+}
+%>
+</aui:select>
+</p>
+<p>
+Preference 5: <aui:select name="preference5" >
+<aui:option></aui:option>
+<%
+for (Projectdetail project : projects) {
+%>
+<aui:option> <%= project.getProjectTitle() %></aui:option>
+<%
+}
+%>
+</aui:select>
 
-</p>
-<p>
-Preference 2: <select name="preference2" label ="preference2">
-<option>Select a project</option>
-<%
-for (Projectdetail project : projects) {
-%>
-<option> <%= project.getProjectTitle() %></option>
-<%
-}
-%>
-</select>
-</p>
-<p>
-Preference 3: <select name="preference3" label ="preference3">
-<option></option>
-<%
-for (Projectdetail project : projects) {
-%>
-<option> <%= project.getProjectTitle() %></option>
-<%
-}
-%>
-</select>
-</p>
-<p>
-Preference 4: <select name="preference4" label ="preference4">
-<option></option>
-<%
-for (Projectdetail project : projects) {
-%>
-<option> <%= project.getProjectTitle() %></option>
-<%
-}
-%>
-</select>
-</p>
-<p>
-Preference 5: <select name="preference5" label ="preference5">
-<option></option>
-<%
-for (Projectdetail project : projects) {
-%>
-<option> <%= project.getProjectTitle() %></option>
-<%
-}
-%>
-</select>
 </p>
 <br><br>
 <h4>Enter your focus areas:</h4> <br>
@@ -104,10 +105,19 @@ for (Projectdetail project : projects) {
 
 <p>
 <br ><br >
+</aui:fieldset>
 <input type="submit" value="Submit">
 
 
 </aui:form>
+
+
+<portlet:renderURL var = "viewsubmitURL">
+<portlet:param name= "jspPage" value ="/view.jsp"/>
+</portlet:renderURL>
+
+<p><a href="<%=viewsubmitURL %>" >Back</a>
+
 
 <aui:script use="aui-form-validator, aui-overlay-context-panel">
 
@@ -118,31 +128,34 @@ rules: {
 <portlet:namespace/>preference1: {
 required: true
 },
-rules: {
 <portlet:namespace/>preference2: {
 required: true
 },
-
-rules: {
 <portlet:namespace/>preference3: {
 required: true
 },
-
-rules: {
 <portlet:namespace/>preference4: {
 required: true
 },
-
-rules: {
 <portlet:namespace/>preference5: {
 required: true
+}
 },
 
 fieldStrings: {
 <portlet:namespace/>preference1: {
 required: '<liferay-ui:message key="required-selected-project" />'
 },
-'<portlet:namespace/>preference2': {
+<portlet:namespace/>preference2: {
+required: '<liferay-ui:message key="required-selected-project" />'
+},
+<portlet:namespace/>preference3: {
+required: '<liferay-ui:message key="required-selected-project" />'
+},
+<portlet:namespace/>preference4: {
+required: '<liferay-ui:message key="required-selected-project" />'
+},
+<portlet:namespace/>preference5: {
 required: '<liferay-ui:message key="required-selected-project" />'
 }
 }
