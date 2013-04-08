@@ -18,7 +18,7 @@ List<Projectdetail> projects = ProjectdetailLocalServiceUtil.getProjectdetails(0
 count);
 %>
 
-<form name="<portlet:namespace/>fm" method="POST" action="<%=
+<form name="fm" method="POST" action="<%=
 updatePreferencesURL.toString() %>">
 <h1>Faculty Preferences</h1><br>
 Select your preferences below:<br><br>
@@ -64,3 +64,54 @@ for (Projectdetail project : projects) {
 
 
 </form>
+
+
+<script type="text/javascript">
+		AUI().use('aui-form-validator', function(A) {
+			var t = Date.now();
+
+			var validator2 = new A.FormValidator({
+				boundingBox: document.fm,
+
+				fieldContainer: 'p',
+				// fieldContainer: null,
+
+				validateOnBlur: true,
+				validateOnInput: true,
+				showMessages: true,
+				showAllMessages: true,
+
+				rules: {
+					preference1: {
+						required: true
+					},
+					
+					preference2: {
+						required: true
+					},
+					preference3: {
+						required: true
+					},
+				},
+
+				fieldStrings: {
+					preference1: {
+						required: 'Preference is required'
+					},
+					preference2: {
+						required: 'Preference is required'
+					},
+					
+					preference3: {
+						required: 'Preference is required'
+					},				
+				}
+
+				
+			});
+
+			console.log('initialization time: ', Date.now() - t);
+		});
+	</script>
+
+

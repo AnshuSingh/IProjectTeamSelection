@@ -58,7 +58,7 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 3: <select name="preference4">
+Preference 4: <select name="preference4">
 <option></option>
 <%
 for (Projectdetail project : projects) {
@@ -70,7 +70,7 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 3: <select name="preference5">
+Preference 5: <select name="preference5">
 <option></option>
 <%
 for (Projectdetail project : projects) {
