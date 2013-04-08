@@ -159,11 +159,31 @@ public class AddProject extends MVCPortlet {
 		String prjsponsor = ParamUtil.getString(actionRequest,"sponsor");
 		String prjcontact = ParamUtil.getString(actionRequest,"contact");
 		System.out.println(prjtitle);
-		actionRequest.setAttribute("prjtitle", prjtitle);
+		/*actionRequest.setAttribute("prjtitle", prjtitle);
 		actionRequest.setAttribute("prjdesc", prjdesc);
 		actionRequest.setAttribute("prjsponsor", prjsponsor);
 		actionRequest.setAttribute("prjcontact", prjcontact);
-		actionResponse.setRenderParameter("jspPage", "/html/addproject/reqskill.jsp");
+		actionResponse.setRenderParameter("jspPage", "/html/addproject/reqskill.jsp");*/
+		
+		PortletURL redirectURL = null;
+		String redirectJSP = "/html/addproject/reqskill.jsp";
+		
+		
+		
+		String portletName = (String)actionRequest.getAttribute(WebKeys.PORTLET_ID);
+	        ThemeDisplay themeDisplay = (ThemeDisplay) actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
+	        redirectURL = PortletURLFactoryUtil.create(PortalUtil.getHttpServletRequest(actionRequest),
+	                portletName, themeDisplay.getLayout().getPlid(), PortletRequest.RENDER_PHASE);
+	        System.out.println(redirectURL);
+			redirectURL.setParameter("projectTitle", prjtitle);
+			redirectURL.setParameter("projectDescription", prjdesc);
+			redirectURL.setParameter("projectSponsor", prjsponsor);
+			redirectURL.setParameter("projectContact", prjcontact);	
+	        redirectURL.setParameter("jspPage", redirectJSP);
+		
+		System.out.println("Checking ");
+		
+		actionResponse.sendRedirect(redirectURL.toString());	
 		
 		}
 		
