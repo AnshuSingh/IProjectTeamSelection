@@ -14,6 +14,10 @@
 		<column name="projectrequiredskill" type="String"></column>
 		<column name="contact" type="String"></column>
 		<column name="status" type="String"></column>
+		
+		<column name="phonenumber" type="String" />
+                <column name="email" type="String" />
+                
 		 <column name="prefer1" type="String" />
                 <column name="prefer2" type="String" />
                 <column name="prefer3" type="String" />
