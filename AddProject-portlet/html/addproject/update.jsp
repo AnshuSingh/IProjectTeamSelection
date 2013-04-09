@@ -70,13 +70,38 @@ message="Project title is required." ></liferay-ui:error>
 
 <!-- <h3>File Upload:</h3>
 <h3> Select a file to upload: </h3>
-<br />
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
-<input type="file" name="file" size="50" />
-<br />
-<input type="submit" value="Upload File" />
-</form> -->
-
+ <center>
+   <table border="2">
+	
+	<tr>
+	       <td align="center"><b>Multiple file Upload</td>
+       	</tr>
+	
+	<tr>
+		<td>
+		       Specify file: <input name="file" type="file" id="file">
+		<td>
+	</tr>
+	
+	<tr>
+		<td>
+		     Specify file:<input name="file" type="file" id="file">
+		</td>
+        <tr>
+		<td>
+		      Specify file:<input name="file" type="file" id="file">
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="center">
+			<input type="submit" value="Upload Files" />
+		</td>
+	</tr>
+    </table>
+	<center>
+ </form>
 
 <br/>
 <br/>
