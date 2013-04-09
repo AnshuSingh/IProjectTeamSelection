@@ -50,6 +50,9 @@ public class AddProject extends MVCPortlet {
 		String status = ParamUtil.getString(actionRequest, "status");
 		String link = ParamUtil.getString(actionRequest, "link");
 		
+		String phone = ParamUtil.getString(actionRequest,"phone");
+		String email = ParamUtil.getString(actionRequest,"email");
+		
 		 String ch1 = ParamUtil.getString(actionRequest, "preference1");
 		 String ch2 = ParamUtil.getString(actionRequest, "preference2");
 		 String ch3 = ParamUtil.getString(actionRequest, "preference3");
@@ -98,6 +101,9 @@ public class AddProject extends MVCPortlet {
 		project.setMprefer3(ch8);
 		project.setMprefer4(ch9);
 		project.setMprefer5(ch10);
+		
+		project.setPhonenumber(phone);
+		project.setEmail(email);
 		
 		if (projectId > 0L) {
 		modifyproject(project);
