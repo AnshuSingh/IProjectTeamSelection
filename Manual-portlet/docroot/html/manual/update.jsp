@@ -2,10 +2,21 @@
 
 
 <%
-PortletURL updateTeamsURL = renderResponse.createActionURL();
-updateTeamsURL.setParameter(
-ActionRequest.ACTION_NAME, "createTeams");
+PortletURL saveURL = renderResponse.createActionURL();
+saveURL.setParameter(
+ActionRequest.ACTION_NAME, "saveteam");
+
+Team team= new TeamImpl();
+long tmID = ParamUtil.getLong(request, "teamID");
+if (tmID > 0L) {
+team = TeamLocalServiceUtil.getTeam(tmID);
+System.out.println(ParamUtil.getLong(request, "teamID"));
+}
+
+
 %>
+
+<b>Manual Team Creation:</b></p>
 
 Select iProject: 
 <%
@@ -25,8 +36,14 @@ Select iProject:
 			studentCount);
 %>
 
+<portlet:actionURL var="updateTeamsURL" name="updateTeams">	
+		<portlet:param name="jspPage" value="/update.jsp" />	
+	</portlet:actionURL>
+	
 <form name="<portlet:namespace/>fm" method="POST" action="<%=
 updateTeamsURL.toString() %>">
+<input type="hidden" name="redirectURL" value="<%= renderResponse.createRenderURL().toString() %>"/>
+<input type="hidden" name="teamID" value="<%= String.valueOf(team.getTeamID()) %>"/>
 <select name="project" >
 <option></option>
 <%
@@ -39,6 +56,8 @@ updateTeamsURL.toString() %>">
 	
 </select>
 <br ><br >
+<b>Select Faculty Mentors:</b>
+<p>Maximum 3 Mentors per team</p>
 <table width="80%" border=1>
 <th>select</th>
 <th>ASUID</th>
@@ -63,6 +82,8 @@ updateTeamsURL.toString() %>">
 	
 </table>
 <br ><br >
+<b>Select student for the Team: </b>
+<p>Minimium 4 Students per Team</p>
 <table width="80%" border=1 >
 <th>select</th>
 <th>ASUID</th>
@@ -91,7 +112,7 @@ updateTeamsURL.toString() %>">
 
 </table><br /><br ><br >
 
-<input type="submit" value="Create Team">
+<input type="submit" value="Save">
 <p>
 </p>
 

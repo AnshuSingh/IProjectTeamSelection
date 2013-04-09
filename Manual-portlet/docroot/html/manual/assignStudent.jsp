@@ -5,13 +5,7 @@ PortletURL updateTeamsURL = renderResponse.createActionURL();
 updateTeamsURL.setParameter(
 ActionRequest.ACTION_NAME, "createTeams");
 %>
-
-Select iProject: 
-<%
-	int count = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
-	List<Projectdetail> projects = ProjectdetailLocalServiceUtil.getProjectdetails(0,
-			count);
-%>
+Select students:
 <%
 	int studentCount = StudentLocalServiceUtil.getStudentsCount();
 	List<Student> students = StudentLocalServiceUtil.getStudents(0,
@@ -20,20 +14,13 @@ Select iProject:
 
 <form name="<portlet:namespace/>fm" method="POST" action="<%=
 updateTeamsURL.toString() %>">
-<select name="project">
-<option></option>
-<%
-		for (Projectdetail project : projects) {
-	%>
-	<option> <%= project.getProjectTitle() %></option>
-	<%
-		}
-	%>
-</select>
+
 <br ><br >
 
-<table width="80%">
-<th></th>
+</table>
+<br ><br >
+<table width="80%" border=1 >
+<th>select</th>
 <th>ASUID</th>
 <th>Name</th>
 <th>Course</th>

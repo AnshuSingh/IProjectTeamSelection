@@ -25,7 +25,7 @@ import com.liferay.util.bridges.mvc.MVCPortlet;
  * Portlet implementation class Manual
  */
 public class Manual extends MVCPortlet {
-	public void createTeams(ActionRequest actionRequest,
+	public void updateTeams(ActionRequest actionRequest,
 			ActionResponse actionResponse)
 			throws IOException, PortletException {
 			String project = ParamUtil.getString(actionRequest, "project");
@@ -51,7 +51,7 @@ public class Manual extends MVCPortlet {
 				team = new TeamImpl();
 				}
 								 
-		//TeamImpl team = new TeamImpl();
+
 			team.setTeamID(teamID );
 			team.setProjectTitle(project);
 			
@@ -141,7 +141,22 @@ public class Manual extends MVCPortlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			}
-		}	
+		}
+		
+		public void saveteam(ActionRequest actionRequest,
+				ActionResponse actionResponse) throws IOException, PortletException {
+			
+			
+			String prjtitle = ParamUtil.getString(actionRequest,"project");
+			
+			 String [] fac = actionRequest.getParameterValues("faculty");
+			 String [] std = actionRequest.getParameterValues("student");
+			 
+			 actionRequest.setAttribute("prjtitle", prjtitle);
+			 actionRequest.setAttribute("fac", fac);
+			 actionRequest.setAttribute("std", std);
+		}
+			
 
 		public void deleteTeam(ActionRequest actionRequest,
 	            ActionResponse actionResponse) throws IOException, PortletException
