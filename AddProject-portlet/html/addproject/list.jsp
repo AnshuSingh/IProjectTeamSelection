@@ -1,6 +1,7 @@
 <%@page import="com.liferay.portal.kernel.util.ListUtil"%>
 <%@ include file="/html/addproject/init.jsp" %>
 
+
 <h1>List of projects</h1>
 <%
 int count = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
