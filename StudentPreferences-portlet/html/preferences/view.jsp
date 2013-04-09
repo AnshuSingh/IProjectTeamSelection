@@ -83,7 +83,7 @@ for (Projectdetail project : projects) {
 </p>
 
 <br ><br >
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" onclick = "return validateDD();>
 
 
 </form>
@@ -149,6 +149,28 @@ for (Projectdetail project : projects) {
 
 			console.log('initialization time: ', Date.now() - t);
 		});
+		
+			function checkDropdowns(){
+				alert("here");
+				var dropdowns =5;
+				var x ,y;
+				var key=0;
+				alert("here1");
+			
+				for (var i=1; i<= dropdowns; ++i){
+					x=  document.getElementById('preference' + i).value;
+						for(j=1;j <=dropdowns; ++j){
+							y=  document.getElementById('preference'+ j).value;
+							if(i !=j && x==y) {
+								 alert('Duplicate!');
+								 return false;
+							}
+						}							
+				}
+					
+			//No duplicate			
+			return true;
+			}
 	</script>
 
 
