@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<theme id="asu" name="ASU">
+  <root-path>/html/themes/my-theme</root-path>
+  <templates-path>/html/themes/my-theme/templates</templates-path>
+  <images-path>/html/themes/my-theme/images</images-path>
+  <template-extension >jsp</template-extension>
+  <color-scheme id="01" name="ASU">
+    <![CDATA[ 
+	body-bg=#FFFFFF
+    layout-bg=#FFFFFF
+    layout-text=#000000
+    layout-tab-bg=#FFFFFF
+    layout-tab-text=#000000
+    layout-tab-selected-bg=#FFFFFF
+    layout-tab-selected-text=#000000
+    portlet-title-bg=#FFFFFF
+    portlet-title-text=#000000
+    portlet-menu-bg=#FFFFFF
+    portlet-menu-text=#000000
+    portlet-bg=#FFFFFF
+    portlet-font=#000000
+    portlet-font-dim=#000000
+    portlet-msg-status=#000000
+    portlet-msg-info=#000000
+    portlet-msg-error=#000000
+    portlet-msg-alert=#000000
+    portlet-msg-success=#000000
+    portlet-section-header=#000000
+    portlet-section-header-bg=#FFFFFF
+    portlet-section-subheader=#000000
+    portlet-section-subheader-bg=#FFFFFF
+    portlet-section-body=#000000
+    portlet-section-body-bg=#FFFFFF
+    portlet-section-body-hover=#FFFFFF
+    portlet-section-body-hover-bg=#F4F4F4
+    portlet-section-alternate=#000000
+    portlet-section-alternate-bg=#333333
+    portlet-section-alternate-hover=#FFFFFF
+    portlet-section-alternate-hover-bg=#F4F4F4
+    portlet-section-selected=#000000
+    portlet-section-selected-bg=#FFFFFF
+    portlet-section-selected-hover=#000000
+    portlet-section-selected-hover-bg=#FFFFFF
+	]]>
+  </color-scheme>
+</theme>
+
+
+---
+
+
+<theme id="asu" name="ASU">
+  <root-path>/my_theme</root-path>
+  <templates-path>${root-path}/templates</templates-path>
+  <images-path>${root-path}/images</images-path>
+  <template-extension>vm</template-extension>
+  <color-scheme id="01" name="ASU">
+    <css-class>asu</css-class>
+    <color-scheme-images-path> ${images-path}/color_schemes/${cssclass} </color-scheme-images-path>
+  </color-scheme>
+</theme>

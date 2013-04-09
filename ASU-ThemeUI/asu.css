@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* CSS Document */
+
+body.asu, .asu .portlet {
+	background-image: url(prospectivebgTop.jpg), url(prospectivebg1px.jpg);
+	background-repeat: no-repeat, repeat-y;
+	background-position: top center, top center;
+	background-color: #fff;
+}
+.asu .logo .current-site {
+	background-color:#bfb8a7
+}
+.asu .aui-state-hover {
+	background-color:#dac8ba;
+	background-image:url(state_hover_bg.png);
+	border-color:#837062
+}
+.asu .aui-icon {
+	background-image:url(icon_sprite.png)
+}
+.asu a {
+	color:#7d745b
+}
+.asu a:hover {
+	color:#cd7700
+}
+.asu .results-header {
+	background-color:#ddd9d2
+}
+.asu .results-row.alt td {
+	background-color:#e7e4de
+}
+.asu .results-row.hover td {
+	background-color:#cdc7bd
+}
+.asu .drop-area {
+	background-color:#ded8d4
+}
+.asu .aui-resizable-proxy {
+	border-color:#968a83
+}
+.asu .aui-sortable-proxy {
+	background-color:#827972
+}
+.asu .aui-menugroup-content h4 {
+	background-color:#dfdcd3;
+	color:#7d745b
+}
+.asu .aui-menu-content li a, .asu .lfr-menu-list ul li a {
+	color:#990033;
+	border-color:#000 #000 #000 #000;
+}
+.asu .my-sites-menu .current-site {
+	background:#FFB310 url
+}
+.asu .my-sites-menu .current-site a {
+	background-color:#bb8f30;
+	color:#FFF
+}
+.asu .aui-menu-content li a.aui-focus, .asu .lfr-menu-list ul a.aui-focus, .asu .lfr-menu-expanded li a:focus {
+	background-color:#7d745b;
+	color:#FFF;
+	text-shadow:-1px -1px #34322c
+}
+.asu .aui-tab {
+	background:0
+}
+.asu .aui-tab-active {
+	background-color:#333
+}
+.asu .aui-tab-active, .asu .aui-tab-active a {
+	color:#FFF
+}
+
+.asu .portlet-msg-info, .asu .portlet-msg-help, .asu .lfr-message-help, .asu .portlet-msg-progress, .asu .lfr-message-progress, .asu .lfr-message-info {
+	background-color:#FFB310;
+	background-image:url(../images/messages/info.png);
+	color: #000;
+	border-color:#000000
+}
+
+.asu .portlet-communities .lfr-current-theme, .asu .portlet-enterprise-admin .lfr-current-theme {
+	background-color:#f8f4f1;
+	border-color:#968a83
+}
+.asu .portlet-communities .theme-entry, .asu .portlet-communities .lfr-current-theme .theme-screenshot, .asu .portlet-enterprise-admin .theme-entry, .asu .portlet-enterprise-admin .lfr-current-theme .theme-screenshot {
+	border-color:#bdb4af
+}
+.asu .portlet-communities .theme-entry .theme-title, .asu .portlet-enterprise-admin .theme-entry .theme-title {
+	background-color:#948d88;
+	border-color:#968a83
+}
+.asu .portlet-communities .lfr-theme-list h3, .asu .portlet-enterprise-admin .lfr-theme-list h3 {
+	background-color:#ded8d4
+}
+.asu .portlet-communities .selected-color-scheme .theme-entry, .asu .portlet-enterprise-admin .selected-color-scheme .theme-entry {
+	border-color:#9a6f33
+}
+.asu .portlet-communities .lfr-theme-list .theme-entry:hover, .asu .portlet-enterprise-admin .lfr-theme-list .theme-entry:hover {
+	background-color:#ffeee0;
+	border-color:#e0bda8;
+	color:#c9b09f
+}
+.asu .portlet-communities .theme-entry:hover .theme-thumbnail, .asu .portlet-enterprise-admin .theme-entry:hover .theme-thumbnail {
+	border-color:#e0bda8
+}
+.asu .portlet-document-library .detail-column-last {
+	background-color:#ffe9d8
+}
+.asu .portlet-document-library .detail-column-last .detail-column-content {
+	border-color:#daa489
+}
+.asu .dockbar {
+	background:#FFB310 url(../images/dockbar/dockbar_bg.png) repeat-x 0 0;
+	border-bottom:1px solid #000;
+}
+.asu .dockbar .menu-button-active {
+	background-color:#990033
+}
+.asu .dockbar .menu-button-active a {
+	color:#FFF
+}
+.asu .aui-portal-layout-drag-indicator {
+	background-color:#b6a63c
+}
+.asu .aui-autocomplete-results-content {
+	border-color:#f5d599
+}
+.asu .aui-autocomplete-selected {
+	background-color:#f7f0e0;
+	border-color:#ead8a4
+}
+.asu .aui-textboxlistentry {
+	background-color:#f4eacb;
+	border-color:#ead8a4
+}
+.asu .aui-textboxlistentry-focused {
+	background-color:#b6a63c;
+	border-color:#4f4534
+}
+.asu .aui-textboxlistentry-close-hover {
+	background-color:#ead8a4
+}
+.asu .portlet {
+	border-color:#968a83
+}
+.asu .portlet-topper {
+	background-color:#d9ddd3;
+	border-bottom-color:#b7bcae
+}
+.asu .panel-page .portlet-topper {
+	border-bottom-color:#968a83
+}
+.asu .portlet-section-selected, .asu .portlet-section-selected a {
+	background-color:#968a83
+}
+.asu .portlet-section-selected a:hover, .asu .portlet-section-selected a:focus {
+	background-color:#968a83
+}
+.asu .portlet-calendar .calendar-day .day-text {
+	background-color:#968a83
+}
+.asu .taglib-calendar tr td a {
+	background-color:#eff3ea
+}
+.asu .taglib-calendar tr td a:hover {
+	background-color:#968a83
+}
+.asu .taglib-calendar .calendar-current-day a {
+	border-color:#968a83;
+	color:#5f9930
+}
+.asu .portlet-calendar .taglib-calendar tr td.calendar-current-day a:hover, .asu .portlet-calendar .taglib-calendar tr td.calendar-current-day a:focus {
+	background-color:#f2ffdf;
+	border-color:#b7bcae;
+	color:#5bcc00
+}
+.asu .taglib-calendar .calendar-current-day, .asu .taglib-calendar .calendar-current-day a {
+	background-color:#FFF
+}
+.asu .taglib-calendar tr td.calendar-inactive {
+	color:#bec4b5
+}
+.asu .journal-template-error .scroll-pane pre span {
+	background-color:#bec4b5
+}
+.asu .restricted * {
+	color:#968a83
+}
+
+.asu .lfr-add-content {
+	margin: 0px 0px 1em;
+	padding: 0px;
+	background-color: #e5e5e5;
+	display: block;
+}
+
+.asu .lfr-panel-page .lfr-add-content h2 span {
+	background-color: #666666;
+	color: #FFFFFF;
+	display: block;
+	padding: 6px 2px 6px 12px;
+}
+
+.asu .lfr-actions .lfr-trigger li a:hover {
+	background-color:#968a83
+}
+.asu .lfr-tag-selector-popup .aui-textfield-content {
+	background-color:#ded8d4;
+	border-color:#bdb4af
+}
+.asu input[type="submit"], .asu input[type="button"], .asu input[type="reset"], .asu button, .asu .lfr-actions, .asu .lfr-actions ul {
+	color:#4f4534
+}
+.asu input[type="submit"]:hover, .asu input[type="button"]:hover, .asu input[type="reset"]:hover, .asu button:hover, .asu .lfr-actions:hover, .asu .lfr-actions:hover ul {
+	background-color:#dac8ba;
+	background-image:url(state_hover_bg.png);
+	border-color:#837062;
+	color:#9a6f33
+}
+.asu input[type="submit"]:focus, .asu input[type="button"]:focus, .asu input[type="reset"]:focus, .asu button:focus, .asu .lfr-actions:focus, .asu .lfr-actions:focus ul {
+	background-color:#ececec;
+	background-image:url(state_active_bg.png)
+}
+
+.asu .site-breadcrumbs ul {
+	background-color:#990033;
+	border:1px solid #000;
+	margin:0
+}
+
+.asu .site-breadcrumbs li.first a {
+	color:#9a6f33
+}
+.asu .site-breadcrumbs li.last a {
+	color:#67604b
+}
+.asu .lfr-hudcrumbs .breadcrumbs li a, .asu .lfr-hudcrumbs .breadcrumbs li span {
+	color:#FFF
+}
+
