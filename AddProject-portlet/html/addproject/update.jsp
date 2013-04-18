@@ -66,8 +66,80 @@ message="Project title is required." ></liferay-ui:error>
 
 <!--aui:button type="submit" value="Save"/-->
 </aui:form>
+<script type="text/javascript">
+		AUI().use('aui-form-validator', function(A) {
+			var t = Date.now();
 
+			var validator2 = new A.FormValidator({
+				boundingBox: document.fm,
 
+				fieldContainer: 'p',
+				// fieldContainer: null,
+
+				validateOnBlur: true,
+				validateOnInput: true,
+				showMessages: true,
+				showAllMessages: true,
+
+				rules: {
+					projectTitle: {
+						required: true
+					},
+					sponsor: {
+						required: true
+					},
+					projectrequiredskill: {
+						required: true
+					},
+					contact: {
+						required: true
+					},
+					phone: {
+						required: true
+					},
+					email: {
+						required: true
+					},
+					status: {
+						required: true
+					},
+					
+			},
+
+			fieldStrings: {
+					projectTitle: {
+						required: 'projectTitle is a required feild'
+					},
+					sponsor: {
+						required: 'Sponsor is required'
+					},
+					
+					projectrequiredskill: {
+						required: 'Projectrequiredskill is a required feild'
+					},
+					contact: {
+						required: 'Contact is  a required feild'
+					},
+					phone: {
+						required: 'Phone is a required feild'
+					},
+					email: {
+						required: 'Email is a required feild'
+					},
+					status: {
+						required: 'Status is a required feild'
+					},
+									
+				}
+
+				
+			});
+
+			console.log('initialization time: ', Date.now() - t);
+		});
+	</script>
+
+			
 <!-- <h3>File Upload:</h3>
 <h3> Select a file to upload: </h3>
 <form action="UploadServlet" method="post" enctype="multipart/form-data">
@@ -106,3 +178,5 @@ message="Project title is required." ></liferay-ui:error>
 <br/>
 <br/>
 <a href="<portlet:renderURL/>">&laquo;Back</a>
+
+
