@@ -58,8 +58,8 @@ public class Preferences extends MVCPortlet {
 		preference.setPreference1(preference1);
 		preference.setPreference2(preference2);
 		preference.setPreference3(preference3);
-		preference.setPreference3(preference4);
-		preference.setPreference3(preference5);
+		preference.setPreference4(preference4);
+		preference.setPreference5(preference5);
 
 
 		preference.setDateAdded(new Date());
