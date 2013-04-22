@@ -23,7 +23,7 @@ updatePreferencesURL.toString() %>">
 <h1>Faculty Preferences</h1><br>
 Select your preferences below:<br><br>
 <p>
-Preference 1: <select name="preference1">
+Preference 1: <select name="preference1" id ="preference1">
 <option></option>
 <%
 for (Projectdetail project : projects) {
@@ -35,7 +35,7 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 2: <select name="preference2">
+Preference 2: <select name="preference2" id ="preference2">
 <option></option>
 <%
 for (Projectdetail project : projects) {
@@ -47,7 +47,7 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 3: <select name="preference3">
+Preference 3: <select name="preference3" id ="preference3">
 <option></option>
 <%
 for (Projectdetail project : projects) {
@@ -60,7 +60,7 @@ for (Projectdetail project : projects) {
 </p>
 
 <br ><br >
-<input type="submit" value="Submit">
+<input type="button" value="Submit" onclick= "return checkDropdowns();">
 
 
 </form>
@@ -112,6 +112,50 @@ for (Projectdetail project : projects) {
 
 			console.log('initialization time: ', Date.now() - t);
 		});
-	</script>
-
+		function checkDropdowns(){
+			var dropdowns =3;
+			var x ;
+			var y;
+			var key = true;
+			
+			for(var i = 1; i < 3 && key != false; i++)
+			{
+					x = document.getElementById('preference'+ i).value;
+					if(x== ""){
+					alert("Pease enter preferences"+i);
+					key= false;
+					break;
+				}
+					
+				for( var j = i+1; j <= 3 && key != false; j++)
+				{
+					
+					y = document.getElementById('preference'+j).value;
+						if(y == ""){
+						alert("Pease enter preferences"+j);
+						key= false;
+						break;
+					}
+					if(x == y && i != j)
+					{
+						if(y!= ""){
+							alert('Duplicates Found Please Change'+i+j);
+						
+						key = false;
+						break;
+						}
+					}
+				}
+				if(key==false)
+					break;
+			}
+			if(key ==true)
+			document.fm.submit();
+			return key;
+						
+		}
+</script>	
+		
+	
+	
 
