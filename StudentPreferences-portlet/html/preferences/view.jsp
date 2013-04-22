@@ -14,16 +14,18 @@ ActionRequest.ACTION_NAME, "updatePreferences");
 
 <%
 int count = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
+
 List<Projectdetail> projects = ProjectdetailLocalServiceUtil.getProjectdetails(0,
 count);
-%>
 
-<form name="fm" method="POST" action="<%=updatePreferencesURL.toString() %>">
+
+%>
+<form name="fm" method="POST" "action="<%=updatePreferencesURL.toString() %>">
 <h1>Student Preferences</h1><br>
 Select your preferences below:<br><br>
 <p>
-Preference 1: <select name="preference1">
-<option></option>
+Preference 1: <select name="preference1" id ="preference1">
+<option ></option>
 <%
 for (Projectdetail project : projects) {
 %>
@@ -34,8 +36,8 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 2: <select name="preference2">
-<option></option>
+Preference 2: <select name="preference2" id ="preference2">
+<option ></option>
 <%
 for (Projectdetail project : projects) {
 %>
@@ -46,8 +48,8 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 3: <select name="preference3">
-<option></option>
+Preference 3: <select name="preference3" id ="preference3">
+<option ></option>
 <%
 for (Projectdetail project : projects) {
 %>
@@ -58,8 +60,8 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 4: <select name="preference4">
-<option></option>
+Preference 4: <select name="preference4" id ="preference4">
+<option ></option>
 <%
 for (Projectdetail project : projects) {
 %>
@@ -70,8 +72,8 @@ for (Projectdetail project : projects) {
 </select>
 </p>
 <p>
-Preference 5: <select name="preference5">
-<option></option>
+Preference 5: <select name="preference5" id ="preference5">
+<option ></option>
 <%
 for (Projectdetail project : projects) {
 %>
@@ -83,9 +85,7 @@ for (Projectdetail project : projects) {
 </p>
 
 <br ><br >
-<input type="submit" value="Submit" onclick = "return validateDD();>
-
-
+<input type="button" value="Submit" onclick= "return checkDropdowns();">
 </form>
 <script type="text/javascript">
 		AUI().use('aui-form-validator', function(A) {
@@ -123,54 +123,74 @@ for (Projectdetail project : projects) {
 
 				fieldStrings: {
 					preference1: {
-						required: 'Preference is required'
+						required: 'Preference1 is required'
 					},
 					preference2: {
-						required: 'Preference is required'
+						required: 'Preference2 is required'
 					},
 					
 					preference3: {
-						required: 'Preference is required'
+						required: 'Preference3 is required'
 					},
 					
 					preference4: {
-						required: 'Preference is required'
+						required: 'Preference4 is required'
 					},
 					
 					preference5: {
-						required: 'Preference is required'
+						required: 'Preference5 is required'
 					},
-					
-					
 				}
-
+              
+				
 				
 			});
 
 			console.log('initialization time: ', Date.now() - t);
 		});
 		
-			function checkDropdowns(){
-				alert("here");
-				var dropdowns =5;
-				var x ,y;
-				var key=0;
-				alert("here1");
+		function checkDropdowns(){
+			var dropdowns =5;
+			var x ;
+			var y;
+			var key = true;
 			
-				for (var i=1; i<= dropdowns; ++i){
-					x=  document.getElementById('preference' + i).value;
-						for(j=1;j <=dropdowns; ++j){
-							y=  document.getElementById('preference'+ j).value;
-							if(i !=j && x==y) {
-								 alert('Duplicate!');
-								 return false;
-							}
-						}							
+			for(var i = 1; i < 5 && key != false; i++)
+			{
+					x = document.getElementById('preference'+ i).value;
+					if(x== ""){
+					alert("Pease enter preferences"+i);
+					key= false;
+					break;
 				}
 					
-			//No duplicate			
-			return true;
+				for( var j = i+1; j <= 5 && key != false; j++)
+				{
+					
+					y = document.getElementById('preference'+j).value;
+						if(y == ""){
+						alert("Pease enter preferences"+j);
+						key= false;
+						break;
+					}
+					if(x == y && i != j)
+					{
+						if(y!= ""){
+							alert('Duplicates Found Please Change'+i+j);
+						
+						key = false;
+						break;
+						}
+					}
+				}
+				if(key==false)
+					break;
 			}
-	</script>
-
-
+			if(key ==true)
+			document.fm.submit();
+			return key;
+						
+		}
+</script>	
+		
+	
