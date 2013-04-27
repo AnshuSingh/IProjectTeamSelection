@@ -15,11 +15,21 @@ import com.asu.poly.teams.manualSelect.slayer.service.TeamLocalServiceUtil;
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+import java.io.*;
+import java.sql.*;
+import static java.lang.System.*;
+import com.liferay.portal.kernel.servlet.SessionErrors;  
+import com.liferay.portal.util.PortalUtil;
+
+import org.springframework.stereotype.Controller;  
+import org.springframework.ui.Model;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+import org.springframework.web.portlet.bind.annotation.ActionMapping;  
+import org.springframework.web.portlet.bind.annotation.RenderMapping;  
 
 /**
  * Portlet implementation class Manual
@@ -29,6 +39,7 @@ public class Manual extends MVCPortlet {
 			ActionResponse actionResponse)
 			throws IOException, PortletException {
 			String project = ParamUtil.getString(actionRequest, "project");
+			int count=0;
 			if(project ==null || "".equalsIgnoreCase(project)){
 				SessionErrors.add(actionRequest, "project-required");
 				}
@@ -53,7 +64,31 @@ public class Manual extends MVCPortlet {
 								 
 
 			team.setTeamID(teamID );
-			team.setProjectTitle(project);
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "");
+				Statement st = con.createStatement();
+				ResultSet rs=st.executeQuery("SELECT  * FROM `teamdetails` WHERE projectTitle ='"+project+" ' ");
+				while(rs.next()){
+					count++;
+				}
+				if(count>0){
+			        out.println("<font color=red>Error: Team is already created for the particular Project Title</font>");
+			        //SessionErrors.add(actionRequest,"Team is already created for the particular Project Title" );
+			       SessionErrors.add(actionRequest, "error-key");
+			        //SessionErrors.add(actionRequest, error.class);
+			      // SessionMessages.add(actionRequest, PortalUtil.getPortletId(actionRequest) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+				}
+				else{
+					team.setProjectTitle(project);
+				}
+			}
+			catch(Exception e){
+		        System.out.print(e);
+				
+			}
+			
+			
 			
 			// set UI fields
 				
@@ -136,8 +171,8 @@ public class Manual extends MVCPortlet {
 			team.setDateModified(new Date());
 
 			try {
-			TeamLocalServiceUtil.updateTeam(team);
-			} catch (SystemException e) {
+				TeamLocalServiceUtil.updateTeam(team);
+				} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			}
@@ -167,7 +202,9 @@ public class Manual extends MVCPortlet {
 	    if (teamID > 0L) {
             try {
             	Team team = TeamLocalServiceUtil.getTeam(teamID);
-            	 TeamLocalServiceUtil.deleteTeam(teamID);
+            	TeamLocalServiceUtil.deleteTeam(teamID);
+            	
+            	
             } catch (PortalException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
