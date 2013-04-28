@@ -16,9 +16,8 @@
 */
 --%>
 
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
-<portlet:renderURL var="studentAvailabilityURL">
-<portlet:param name="jspPage" value="/html/availability/update.jsp"/>
-</portlet:renderURL>
+<portlet:defineObjects />
 
-<br/><a href="<%= studentAvailabilityURL %>">Available Hours &raquo;</a>
+This is the <b>Availability Portlet</b> portlet in Edit mode.

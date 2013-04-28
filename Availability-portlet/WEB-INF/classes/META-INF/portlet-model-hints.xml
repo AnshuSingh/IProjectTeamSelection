@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.StudentAvailability.slayer.model.SASstudent">
+		<field name="studentid" type="long" />
+		<field name="ASUId" type="String" />
+		<field name="mon8to9" type="String" />
+		<field name="mon9to10" type="String" />
+		<field name="mon10to11" type="String" />
+		<field name="mon11to12" type="String" />
+		<field name="mon12to1" type="String" />
+		<field name="mon1to2" type="String" />
+		<field name="mon2to3" type="String" />
+		<field name="mon3to4" type="String" />
+		<field name="mon4to5" type="String" />
+		<field name="tue8to9" type="String" />
+		<field name="tue9to10" type="String" />
+		<field name="tue10to11" type="String" />
+		<field name="tue11to12" type="String" />
+		<field name="tue12to1" type="String" />
+		<field name="tue1to2" type="String" />
+		<field name="tue2to3" type="String" />
+		<field name="tue3to4" type="String" />
+		<field name="tue4to5" type="String" />
+		<field name="wed8to9" type="String" />
+		<field name="wed9to10" type="String" />
+		<field name="wed10to11" type="String" />
+		<field name="wed11to12" type="String" />
+		<field name="wed12to1" type="String" />
+		<field name="wed1to2" type="String" />
+		<field name="wed2to3" type="String" />
+		<field name="wed3to4" type="String" />
+		<field name="wed4to5" type="String" />
+		<field name="thu8to9" type="String" />
+		<field name="thu9to10" type="String" />
+		<field name="thu10to11" type="String" />
+		<field name="thu11to12" type="String" />
+		<field name="thu12to1" type="String" />
+		<field name="thu1to2" type="String" />
+		<field name="thu2to3" type="String" />
+		<field name="thu3to4" type="String" />
+		<field name="thu4to5" type="String" />
+		<field name="fri8to9" type="String" />
+		<field name="fri9to10" type="String" />
+		<field name="fri10to11" type="String" />
+		<field name="fri11to12" type="String" />
+		<field name="fri12to1" type="String" />
+		<field name="fri1to2" type="String" />
+		<field name="fri2to3" type="String" />
+		<field name="fri3to4" type="String" />
+		<field name="fri4to5" type="String" />
+		<field name="sat8to9" type="String" />
+		<field name="sat9to10" type="String" />
+		<field name="sat10to11" type="String" />
+		<field name="sat11to12" type="String" />
+		<field name="sat12to1" type="String" />
+		<field name="sat1to2" type="String" />
+		<field name="sat2to3" type="String" />
+		<field name="sat3to4" type="String" />
+		<field name="sat4to5" type="String" />
+		<field name="sun8to9" type="String" />
+		<field name="sun9to10" type="String" />
+		<field name="sun10to11" type="String" />
+		<field name="sun11to12" type="String" />
+		<field name="sun12to1" type="String" />
+		<field name="sun1to2" type="String" />
+		<field name="sun2to3" type="String" />
+		<field name="sun3to4" type="String" />
+		<field name="sun4to5" type="String" />
+		<field name="author" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>

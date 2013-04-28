@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.StudentAvailability.slayer.model.impl.SASstudentModelImpl">
+		<attributes>
+			<id name="studentid" />
+			<basic name="ASUId" />
+			<basic name="mon8to9" />
+			<basic name="mon9to10" />
+			<basic name="mon10to11" />
+			<basic name="mon11to12" />
+			<basic name="mon12to1" />
+			<basic name="mon1to2" />
+			<basic name="mon2to3" />
+			<basic name="mon3to4" />
+			<basic name="mon4to5" />
+			<basic name="tue8to9" />
+			<basic name="tue9to10" />
+			<basic name="tue10to11" />
+			<basic name="tue11to12" />
+			<basic name="tue12to1" />
+			<basic name="tue1to2" />
+			<basic name="tue2to3" />
+			<basic name="tue3to4" />
+			<basic name="tue4to5" />
+			<basic name="wed8to9" />
+			<basic name="wed9to10" />
+			<basic name="wed10to11" />
+			<basic name="wed11to12" />
+			<basic name="wed12to1" />
+			<basic name="wed1to2" />
+			<basic name="wed2to3" />
+			<basic name="wed3to4" />
+			<basic name="wed4to5" />
+			<basic name="thu8to9" />
+			<basic name="thu9to10" />
+			<basic name="thu10to11" />
+			<basic name="thu11to12" />
+			<basic name="thu12to1" />
+			<basic name="thu1to2" />
+			<basic name="thu2to3" />
+			<basic name="thu3to4" />
+			<basic name="thu4to5" />
+			<basic name="fri8to9" />
+			<basic name="fri9to10" />
+			<basic name="fri10to11" />
+			<basic name="fri11to12" />
+			<basic name="fri12to1" />
+			<basic name="fri1to2" />
+			<basic name="fri2to3" />
+			<basic name="fri3to4" />
+			<basic name="fri4to5" />
+			<basic name="sat8to9" />
+			<basic name="sat9to10" />
+			<basic name="sat10to11" />
+			<basic name="sat11to12" />
+			<basic name="sat12to1" />
+			<basic name="sat1to2" />
+			<basic name="sat2to3" />
+			<basic name="sat3to4" />
+			<basic name="sat4to5" />
+			<basic name="sun8to9" />
+			<basic name="sun9to10" />
+			<basic name="sun10to11" />
+			<basic name="sun11to12" />
+			<basic name="sun12to1" />
+			<basic name="sun1to2" />
+			<basic name="sun2to3" />
+			<basic name="sun3to4" />
+			<basic name="sun4to5" />
+			<basic name="author" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.StudentAvailability.slayer.model.impl.SASstudentImpl" name="SASstudent">
+		<table name="SAS_SASstudent" />
+		<attributes />
+	</entity>
+</entity-mappings>

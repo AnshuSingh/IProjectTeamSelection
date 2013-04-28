@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.StudentAvailability.slayer">
+	<author>Purva</author>
+	<namespace>SAS</namespace>
+	<entity name="SASstudent" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="studentid" type="long" primary="true"></column>
+		<column name="ASUId" type="String"></column>
+		<!-- UI fields -->
+		<column name="mon8to9" type="String"></column>
+		<column name="mon9to10" type="String"></column>
+		<column name="mon10to11" type="String"></column>
+		<column type="String" name="mon11to12"></column>
+		<column name="mon12to1" type="String"></column>
+		<column name="mon1to2" type="String"></column>
+		<column name="mon2to3" type="String"></column>
+		<column name="mon3to4" type="String"></column>
+		<column name="mon4to5" type="String"></column>
+		<column name="tue8to9" type="String"></column>
+		<column name="tue9to10" type="String"></column>
+		<column name="tue10to11" type="String"></column>
+		<column name="tue11to12" type="String"></column>
+		<column name="tue12to1" type="String"></column>
+		<column name="tue1to2" type="String"></column>
+		<column name="tue2to3" type="String"></column>
+		<column name="tue3to4" type="String"></column>
+		<column name="tue4to5" type="String"></column>
+		<column name="wed8to9" type="String"></column>
+		<column name="wed9to10" type="String"></column>
+		<column name="wed10to11" type="String"></column>
+		<column name="wed11to12" type="String"></column>
+		<column name="wed12to1" type="String"></column>
+		<column name="wed1to2" type="String"></column>
+		<column name="wed2to3" type="String"></column>
+		<column name="wed3to4" type="String"></column>
+		<column name="wed4to5" type="String"></column>
+		<column name="thu8to9" type="String"></column>
+		<column name="thu9to10" type="String"></column>
+		<column name="thu10to11" type="String"></column>
+		<column name="thu11to12" type="String"></column>
+		<column name="thu12to1" type="String"></column>
+		<column name="thu1to2" type="String"></column>
+		<column name="thu2to3" type="String"></column>
+		<column name="thu3to4" type="String"></column>
+		<column name="thu4to5" type="String"></column>
+		<column name="fri8to9" type="String"></column>
+		<column name="fri9to10" type="String"></column>
+		<column name="fri10to11" type="String"></column>
+		<column name="fri11to12" type="String"></column>
+		<column type="String" name="fri12to1"></column>
+		<column name="fri1to2" type="String"></column>
+		<column name="fri2to3" type="String"></column>
+		<column name="fri3to4" type="String"></column>
+		<column name="fri4to5" type="String"></column>
+		<column type="String" name="sat8to9"></column>
+		<column name="sat9to10" type="String"></column>
+		<column name="sat10to11" type="String"></column>
+		<column name="sat11to12" type="String"></column>
+		<column name="sat12to1" type="String"></column>
+		<column name="sat1to2" type="String"></column>
+		<column name="sat2to3" type="String"></column>
+		<column name="sat3to4" type="String"></column>
+		<column name="sat4to5" type="String"></column>
+		<column name="sun8to9" type="String"></column>
+		<column name="sun9to10" type="String"></column>
+		<column name="sun10to11" type="String"></column>
+		<column name="sun11to12" type="String"></column>
+		<column name="sun12to1" type="String"></column>
+		<column name="sun1to2" type="String"></column>
+		<column name="sun2to3" type="String"></column>
+		<column name="sun3to4" type="String"></column>
+		<column name="sun4to5" type="String"></column>
+		<column name="author" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+	</entity>
+</service-builder>
