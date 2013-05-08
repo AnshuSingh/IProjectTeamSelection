@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.NewUser", "com.userexample.service", "Userexample-portlet");

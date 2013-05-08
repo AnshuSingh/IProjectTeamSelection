@@ -1,0 +1,1 @@
+create index IX_70893EE3 on NewUser_Employee (firstName);
