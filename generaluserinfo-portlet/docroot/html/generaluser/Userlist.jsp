@@ -38,9 +38,9 @@ for (Employee subs : subscribers) {
 
 <table width="540" align="center" border="0" cellspacing="10" cellpadding="0" id="mytable">
 <tr >
-	<td  width="30%"><%= (((subs.getFirstName()==null)?"":subs.getFirstName()) + "  " +((subs.getLastName()==null)?"":subs.getLastName())) %> </td>
-	<td  width="50%" ><%= ((subs.getRole()==null)?"                  ":subs.getRole()) %> </td>
 	<td  width="50%" id="employeeid" ><%= subs.getEmployeeId() %> </td>
+	<td  width="30%"><%= (((subs.getFirstName()==null)?"":subs.getFirstName()) + "  " +((subs.getLastName()==null)?"":subs.getLastName())) %> </td>
+	<td  width="50%" ><%= ((subs.getRole()==null)?"                  ":subs.getRole()) %> </td>	
 	<td  width="20%" id="checkboxid"> <input id="checkid" type="checkbox" name="approveuser"  ></td>
 </tr>
 </table>
