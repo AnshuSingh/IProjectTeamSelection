@@ -1,6 +1,5 @@
 <%@ include file="/html/manual/init.jsp" %>
-<%@ page import="com.asu.poly.teams.manualSelect.slayer.model.Team" %>
-<%@ page import="com.asu.poly.teams.manualSelect.slayer.service.TeamLocalServiceUtil" %>
+
 <h1>List of teams</h1>
 <%
 int count = TeamLocalServiceUtil.getTeamsCount();
@@ -19,7 +18,9 @@ PortletURL editTeamURL = renderResponse.createRenderURL();
 editTeamURL.setParameter("jspPage", "/html/manual/update.jsp");
 %>
 
-<table border="1" width="90%" >
+<table id="table" width="100%" border=1 cellpadding="0" cellspacing="0" class="scrollTable"> 
+
+
 <tr>
 <th align="center"> teamID </th>
 <th align="center">Project Title</th>
@@ -35,7 +36,6 @@ editTeamURL.setParameter("jspPage", "/html/manual/update.jsp");
 <th align="center">Student 6</th>
 <th align="center">Student 7</th>
 <th align="center">Student 8</th>
-<th align="center">Student 9</th>
 <th align="center"> Date added </th>
 <th align="center"> Delete </th>
 <th align="center"> Edit </th>
@@ -60,13 +60,12 @@ for (Team team : teams) {
 <td><%= team.getStudent5() %> </td>
 <td><%= team.getStudent6() %> </td>
 <td><%= team.getStudent7() %> </td>
-<td><%= team.getStudent8() %> </td>
 <td><%= team.getDateAdded() %></td>
-<% deleteTeamURL.setParameter("TeamID", String.valueOf(team.getTeamID())); %>
+<% deleteTeamURL.setParameter("teamID", String.valueOf(team.getTeamID())); %>
 <td>
 <a href="<%= deleteTeamURL.toString() %>">Delete &raquo;</a>
 </td>
-<% editTeamURL.setParameter("TeamID", String.valueOf(team.getTeamID())); %>
+<% editTeamURL.setParameter("teamID", String.valueOf(team.getTeamID())); %>
 <td>
 <a href="<%= editTeamURL.toString() %>">Edit &raquo;</a>
 </td>
@@ -77,6 +76,11 @@ for (Team team : teams) {
 <%
 }
 %>
+	</tbody>
 </table> 
-<br ><br><br>
+<br /><br ><br >
+</div>
+<br></br>
  <a href="<portlet:renderURL/>">&laquo;Back</a>
+ 
+

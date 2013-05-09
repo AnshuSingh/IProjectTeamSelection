@@ -1,22 +1,7 @@
 <%@ include file="/html/manual/init.jsp" %>
-<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
-<%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
-<%@ page import="com.liferay.portal.kernel.util.Validator" %>
-<%@ page import="javax.portlet.PortletPreferences" %>
 
 <portlet:defineObjects />
 
-<style>
-table, td, th
-{
-border:1px solid #880000  ;
-}
-th
-{
-background-color:#880000  ;
-color:white;
-}
-</style>
 
  
 <liferay-ui:error key="error"  message="error-message" />
@@ -41,9 +26,8 @@ team = TeamLocalServiceUtil.getTeam(tmID);
  <a href="<portlet:renderURL/>">&laquo;Back</a>
  </div>
  </p>
- <div class="title">
+
 <b>Manual Team Creation:</b></p>
-</div>
 
      
        <br>  
@@ -165,7 +149,7 @@ List<Team> teams = TeamLocalServiceUtil.getTeams(0, team_count);
 </table><br /><br ><br >
 </div>
 <br></br>
-<input type="button" value="Create Team" onclick=" return checkMessage();">
+<input type="submit" value="Save" >
 &nbsp;&nbsp;&nbsp;&nbsp;
 <input type="reset" value="Reset">
 <p>
@@ -287,6 +271,17 @@ html>body tbody.scrollContent td + td + td {
 	width: 300px
 }
 -->
+
+table, td, th
+{
+border:1px solid #880000  ;
+}
+th
+{
+background-color:#880000  ;
+color:white;
+}
+
 </style>
 
 <script type="text/javascript">
