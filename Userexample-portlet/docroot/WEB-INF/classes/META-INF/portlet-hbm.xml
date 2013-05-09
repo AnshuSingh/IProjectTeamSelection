@@ -16,5 +16,7 @@
 		<property name="phoneNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="major" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="cgpa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="role" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="password" type="com.liferay.portal.dao.orm.hibernate.StringType" column="password_" />
 	</class>
 </hibernate-mapping>

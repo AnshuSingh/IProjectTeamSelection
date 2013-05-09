@@ -205,6 +205,36 @@ public interface EmployeeModel extends BaseModel<Employee> {
 	 */
 	public void setCgpa(String cgpa);
 
+	/**
+	 * Returns the role of this employee.
+	 *
+	 * @return the role of this employee
+	 */
+	@AutoEscape
+	public String getRole();
+
+	/**
+	 * Sets the role of this employee.
+	 *
+	 * @param role the role of this employee
+	 */
+	public void setRole(String role);
+
+	/**
+	 * Returns the password of this employee.
+	 *
+	 * @return the password of this employee
+	 */
+	@AutoEscape
+	public String getPassword();
+
+	/**
+	 * Sets the password of this employee.
+	 *
+	 * @param password the password of this employee
+	 */
+	public void setPassword(String password);
+
 	public boolean isNew();
 
 	public void setNew(boolean n);

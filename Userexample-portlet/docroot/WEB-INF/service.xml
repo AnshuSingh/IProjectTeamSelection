@@ -16,6 +16,8 @@
         <column name="phoneNo" type="String" />
         <column name="major" type="String" />
         <column name="cgpa" type="String" />
+        <column name="role" type="String" />
+        <column name="password" type="String" />
          
         <!-- Order -->
         <order by="asc">

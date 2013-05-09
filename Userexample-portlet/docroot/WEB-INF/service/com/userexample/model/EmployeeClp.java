@@ -74,6 +74,8 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 		attributes.put("phoneNo", getPhoneNo());
 		attributes.put("major", getMajor());
 		attributes.put("cgpa", getCgpa());
+		attributes.put("role", getRole());
+		attributes.put("password", getPassword());
 
 		return attributes;
 	}
@@ -132,6 +134,18 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
 		if (cgpa != null) {
 			setCgpa(cgpa);
+		}
+
+		String role = (String)attributes.get("role");
+
+		if (role != null) {
+			setRole(role);
+		}
+
+		String password = (String)attributes.get("password");
+
+		if (password != null) {
+			setPassword(password);
 		}
 	}
 
@@ -215,6 +229,22 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 		_cgpa = cgpa;
 	}
 
+	public String getRole() {
+		return _role;
+	}
+
+	public void setRole(String role) {
+		_role = role;
+	}
+
+	public String getPassword() {
+		return _password;
+	}
+
+	public void setPassword(String password) {
+		_password = password;
+	}
+
 	public BaseModel<?> getEmployeeRemoteModel() {
 		return _employeeRemoteModel;
 	}
@@ -251,6 +281,8 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 		clone.setPhoneNo(getPhoneNo());
 		clone.setMajor(getMajor());
 		clone.setCgpa(getCgpa());
+		clone.setRole(getRole());
+		clone.setPassword(getPassword());
 
 		return clone;
 	}
@@ -299,7 +331,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(19);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{employeeId=");
 		sb.append(getEmployeeId());
@@ -319,13 +351,17 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 		sb.append(getMajor());
 		sb.append(", cgpa=");
 		sb.append(getCgpa());
+		sb.append(", role=");
+		sb.append(getRole());
+		sb.append(", password=");
+		sb.append(getPassword());
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(37);
 
 		sb.append("<model><model-name>");
 		sb.append("com.userexample.model.Employee");
@@ -367,6 +403,14 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 			"<column><column-name>cgpa</column-name><column-value><![CDATA[");
 		sb.append(getCgpa());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>role</column-name><column-value><![CDATA[");
+		sb.append(getRole());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>password</column-name><column-value><![CDATA[");
+		sb.append(getPassword());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -383,5 +427,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 	private String _phoneNo;
 	private String _major;
 	private String _cgpa;
+	private String _role;
+	private String _password;
 	private BaseModel<?> _employeeRemoteModel;
 }

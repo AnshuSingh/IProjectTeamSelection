@@ -39,6 +39,8 @@ public class EmployeeSoap implements Serializable {
 		soapModel.setPhoneNo(model.getPhoneNo());
 		soapModel.setMajor(model.getMajor());
 		soapModel.setCgpa(model.getCgpa());
+		soapModel.setRole(model.getRole());
+		soapModel.setPassword(model.getPassword());
 
 		return soapModel;
 	}
@@ -163,6 +165,22 @@ public class EmployeeSoap implements Serializable {
 		_cgpa = cgpa;
 	}
 
+	public String getRole() {
+		return _role;
+	}
+
+	public void setRole(String role) {
+		_role = role;
+	}
+
+	public String getPassword() {
+		return _password;
+	}
+
+	public void setPassword(String password) {
+		_password = password;
+	}
+
 	private long _employeeId;
 	private long _companyId;
 	private long _userId;
@@ -172,4 +190,6 @@ public class EmployeeSoap implements Serializable {
 	private String _phoneNo;
 	private String _major;
 	private String _cgpa;
+	private String _role;
+	private String _password;
 }

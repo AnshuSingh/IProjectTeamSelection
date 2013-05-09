@@ -10,10 +10,8 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
  
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.model.User;
-import com.liferay.portal.service.UserLocalServiceUtil;
-import com.liferay.portal.service.UserServiceUtil;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.userexample.model.Employee;
 import com.userexample.model.impl.EmployeeImpl;
@@ -47,11 +45,14 @@ public class UserexamplePortlet  {
         employee.setPhoneNo(request.getParameter("phoneNo"));
         employee.setMajor(request.getParameter("major"));
         employee.setCgpa(request.getParameter("cgpa"));
+        employee.setRole(request.getParameter("role"));
+        employee.setPassword(request.getParameter("pwd"));
                          
         EmployeeLocalServiceUtil.addEmployee(employee);
         response.setRenderParameter("redirectPage", "welcome");
         request.setAttribute("EmployeeName",request.getParameter("firstName")+" "+request.getParameter("LastName")); 
         
+        SessionMessages.add(request, "request_processed", "Your request is waiting for approval");
     	    	     
 }
 }

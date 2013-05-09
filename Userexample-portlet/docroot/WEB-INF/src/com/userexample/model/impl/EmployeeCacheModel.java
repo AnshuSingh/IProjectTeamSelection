@@ -32,7 +32,7 @@ import java.io.Serializable;
 public class EmployeeCacheModel implements CacheModel<Employee>, Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(19);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{employeeId=");
 		sb.append(employeeId);
@@ -52,6 +52,10 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Serializable {
 		sb.append(major);
 		sb.append(", cgpa=");
 		sb.append(cgpa);
+		sb.append(", role=");
+		sb.append(role);
+		sb.append(", password=");
+		sb.append(password);
 		sb.append("}");
 
 		return sb.toString();
@@ -106,6 +110,20 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Serializable {
 			employeeImpl.setCgpa(cgpa);
 		}
 
+		if (role == null) {
+			employeeImpl.setRole(StringPool.BLANK);
+		}
+		else {
+			employeeImpl.setRole(role);
+		}
+
+		if (password == null) {
+			employeeImpl.setPassword(StringPool.BLANK);
+		}
+		else {
+			employeeImpl.setPassword(password);
+		}
+
 		employeeImpl.resetOriginalValues();
 
 		return employeeImpl;
@@ -120,4 +138,6 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Serializable {
 	public String phoneNo;
 	public String major;
 	public String cgpa;
+	public String role;
+	public String password;
 }

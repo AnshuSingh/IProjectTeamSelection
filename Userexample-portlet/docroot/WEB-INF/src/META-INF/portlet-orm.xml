@@ -18,6 +18,10 @@
 			<basic name="phoneNo" />
 			<basic name="major" />
 			<basic name="cgpa" />
+			<basic name="role" />
+			<basic name="password">
+				<column name="PASSWORD_" />
+			</basic>
 			<transient name="EMail" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />

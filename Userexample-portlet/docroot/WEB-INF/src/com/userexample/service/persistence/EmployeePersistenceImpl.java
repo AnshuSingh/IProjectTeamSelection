@@ -358,6 +358,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 		employeeImpl.setPhoneNo(employee.getPhoneNo());
 		employeeImpl.setMajor(employee.getMajor());
 		employeeImpl.setCgpa(employee.getCgpa());
+		employeeImpl.setRole(employee.getRole());
+		employeeImpl.setPassword(employee.getPassword());
 
 		return employeeImpl;
 	}

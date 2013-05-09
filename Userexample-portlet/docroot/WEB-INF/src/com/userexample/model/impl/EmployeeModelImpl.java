@@ -73,9 +73,11 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 			{ "eMail", Types.VARCHAR },
 			{ "phoneNo", Types.VARCHAR },
 			{ "major", Types.VARCHAR },
-			{ "cgpa", Types.VARCHAR }
+			{ "cgpa", Types.VARCHAR },
+			{ "role", Types.VARCHAR },
+			{ "password_", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table NewUser_Employee (employeeId LONG not null primary key IDENTITY,companyId LONG,userId LONG,firstName VARCHAR(75) null,lastName VARCHAR(75) null,eMail VARCHAR(75) null,phoneNo VARCHAR(75) null,major VARCHAR(75) null,cgpa VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table NewUser_Employee (employeeId LONG not null primary key IDENTITY,companyId LONG,userId LONG,firstName VARCHAR(75) null,lastName VARCHAR(75) null,eMail VARCHAR(75) null,phoneNo VARCHAR(75) null,major VARCHAR(75) null,cgpa VARCHAR(75) null,role VARCHAR(75) null,password_ VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table NewUser_Employee";
 	public static final String ORDER_BY_JPQL = " ORDER BY employee.firstName ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY NewUser_Employee.firstName ASC";
@@ -115,6 +117,8 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 		model.setPhoneNo(soapModel.getPhoneNo());
 		model.setMajor(soapModel.getMajor());
 		model.setCgpa(soapModel.getCgpa());
+		model.setRole(soapModel.getRole());
+		model.setPassword(soapModel.getPassword());
 
 		return model;
 	}
@@ -182,6 +186,8 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 		attributes.put("phoneNo", getPhoneNo());
 		attributes.put("major", getMajor());
 		attributes.put("cgpa", getCgpa());
+		attributes.put("role", getRole());
+		attributes.put("password", getPassword());
 
 		return attributes;
 	}
@@ -240,6 +246,18 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
 		if (cgpa != null) {
 			setCgpa(cgpa);
+		}
+
+		String role = (String)attributes.get("role");
+
+		if (role != null) {
+			setRole(role);
+		}
+
+		String password = (String)attributes.get("password");
+
+		if (password != null) {
+			setPassword(password);
 		}
 	}
 
@@ -372,6 +390,34 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 		_cgpa = cgpa;
 	}
 
+	@JSON
+	public String getRole() {
+		if (_role == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _role;
+		}
+	}
+
+	public void setRole(String role) {
+		_role = role;
+	}
+
+	@JSON
+	public String getPassword() {
+		if (_password == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _password;
+		}
+	}
+
+	public void setPassword(String password) {
+		_password = password;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -413,6 +459,8 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 		employeeImpl.setPhoneNo(getPhoneNo());
 		employeeImpl.setMajor(getMajor());
 		employeeImpl.setCgpa(getCgpa());
+		employeeImpl.setRole(getRole());
+		employeeImpl.setPassword(getPassword());
 
 		employeeImpl.resetOriginalValues();
 
@@ -528,12 +576,28 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 			employeeCacheModel.cgpa = null;
 		}
 
+		employeeCacheModel.role = getRole();
+
+		String role = employeeCacheModel.role;
+
+		if ((role != null) && (role.length() == 0)) {
+			employeeCacheModel.role = null;
+		}
+
+		employeeCacheModel.password = getPassword();
+
+		String password = employeeCacheModel.password;
+
+		if ((password != null) && (password.length() == 0)) {
+			employeeCacheModel.password = null;
+		}
+
 		return employeeCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(19);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{employeeId=");
 		sb.append(getEmployeeId());
@@ -553,13 +617,17 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 		sb.append(getMajor());
 		sb.append(", cgpa=");
 		sb.append(getCgpa());
+		sb.append(", role=");
+		sb.append(getRole());
+		sb.append(", password=");
+		sb.append(getPassword());
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(37);
 
 		sb.append("<model><model-name>");
 		sb.append("com.userexample.model.Employee");
@@ -601,6 +669,14 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 			"<column><column-name>cgpa</column-name><column-value><![CDATA[");
 		sb.append(getCgpa());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>role</column-name><column-value><![CDATA[");
+		sb.append(getRole());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>password</column-name><column-value><![CDATA[");
+		sb.append(getPassword());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -622,6 +698,8 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 	private String _phoneNo;
 	private String _major;
 	private String _cgpa;
+	private String _role;
+	private String _password;
 	private long _columnBitmask;
 	private Employee _escapedModelProxy;
 }

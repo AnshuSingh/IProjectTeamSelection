@@ -7,5 +7,7 @@ create table NewUser_Employee (
 	eMail VARCHAR(75) null,
 	phoneNo VARCHAR(75) null,
 	major VARCHAR(75) null,
-	cgpa VARCHAR(75) null
+	cgpa VARCHAR(75) null,
+	role VARCHAR(75) null,
+	password_ VARCHAR(75) null
 );

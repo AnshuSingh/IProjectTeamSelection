@@ -53,6 +53,8 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
 		attributes.put("phoneNo", getPhoneNo());
 		attributes.put("major", getMajor());
 		attributes.put("cgpa", getCgpa());
+		attributes.put("role", getRole());
+		attributes.put("password", getPassword());
 
 		return attributes;
 	}
@@ -110,6 +112,18 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
 
 		if (cgpa != null) {
 			setCgpa(cgpa);
+		}
+
+		String role = (String)attributes.get("role");
+
+		if (role != null) {
+			setRole(role);
+		}
+
+		String password = (String)attributes.get("password");
+
+		if (password != null) {
+			setPassword(password);
 		}
 	}
 
@@ -311,6 +325,42 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
 	*/
 	public void setCgpa(java.lang.String cgpa) {
 		_employee.setCgpa(cgpa);
+	}
+
+	/**
+	* Returns the role of this employee.
+	*
+	* @return the role of this employee
+	*/
+	public java.lang.String getRole() {
+		return _employee.getRole();
+	}
+
+	/**
+	* Sets the role of this employee.
+	*
+	* @param role the role of this employee
+	*/
+	public void setRole(java.lang.String role) {
+		_employee.setRole(role);
+	}
+
+	/**
+	* Returns the password of this employee.
+	*
+	* @return the password of this employee
+	*/
+	public java.lang.String getPassword() {
+		return _employee.getPassword();
+	}
+
+	/**
+	* Sets the password of this employee.
+	*
+	* @param password the password of this employee
+	*/
+	public void setPassword(java.lang.String password) {
+		_employee.setPassword(password);
 	}
 
 	public boolean isNew() {

@@ -11,5 +11,7 @@
 		<field name="phoneNo" type="String" />
 		<field name="major" type="String" />
 		<field name="cgpa" type="String" />
+		<field name="role" type="String" />
+		<field name="password" type="String" />
 	</model>
 </model-hints>
