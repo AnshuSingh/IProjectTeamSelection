@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.GeneralUser", "com.generaluser.slayer.service", "generaluserinfo-portlet");

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.generaluser.slayer">
+	<author>Shruthi</author>
+	<namespace>GeneralUser</namespace>
+
+	<entity name="Employee" local-service="true" remote-service="true" table="newuser_employee">
+
+		 <!-- PK fields -->
+        <column name="employeeId" type="long" primary="true" id-type="identity"/>
+		 <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="firstName" type="String" />
+        <column name="lastName" type="String" />
+        <column name="eMail" type="String" />
+        <column name="phoneNo" type="String" />
+        <column name="major" type="String" />
+        <column name="cgpa" type="String" />
+        <column name="role" type="String" />
+        <column name="password" type="String" />
+	</entity>
+</service-builder>
