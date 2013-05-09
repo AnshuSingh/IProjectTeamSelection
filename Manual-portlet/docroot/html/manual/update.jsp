@@ -121,7 +121,8 @@ updateTeamsURL.toString() %>">
 <b>Select student for the Team: </b>
 <p>Minimium 4 Students per Team</p>
 <div id="tableContainer" class="tableContainer">
-<table width="100%" border=1 cellpadding="0" cellspacing="0" class="scrollTable"> 
+<input type="text" id="filter" placeholder="Enter a search criteria">
+<table id="table" width="100%" border=1 cellpadding="0" cellspacing="0" class="scrollTable"> 
 <thead class="fixedHeader">
 	<tr>
 		<th>select</th>
@@ -288,4 +289,20 @@ html>body tbody.scrollContent td + td + td {
 -->
 </style>
 
+<script type="text/javascript">
+<!--
+filter
+//-->
+
+var $rows = $('#table tr');
+$('#filter').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 
