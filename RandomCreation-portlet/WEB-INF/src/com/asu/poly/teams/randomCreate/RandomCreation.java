@@ -109,6 +109,105 @@ public class RandomCreation extends MVCPortlet {
 			
 			System.out.println("Your inputs ==> " + project+ctr);
 	}
+	
+	double  multiSelectScore(){
+		double score = 0.0;
+		ArrayList choices = new ArrayList();
+		int[][] r = new int[students.size()][5];
+		int sum = 0;
+		for (int i=0;i<choices.size();i++){
+			for (int j=0; j<students.size();j++){
+			if (students.choices.get(i).isSelected() == true)
+				r[i][j]= 1;
+			else
+				r[i][j]=0;
+			sum += r[i][j];
+		}
+		}
+		score = sum / team.getCount();
+		return score;
+	}
+	
+	double  chooseAnyOrAllScore(){
+		double score = 0.0;
+		ArrayList choices = new ArrayList();
+		ArrayList options = new ArrayList();
+		int[][] r = new int[students.size()][5];
+		int[] sum = new int[choices.size()];
+		int i;
+		int[] b = new int[choices.size()];
+		int numOfResponses;
+			
+			for (i=0;i<choices.size();i++){
+				for (int j=0; j<students.size();j++){
+				if (students.choices.get(i).isSelected() == true)
+					r[i][j]= 1;
+				else
+					r[i][j]=0;
+				sum[i] += r[i][j];
+			}
+			}
+				
+				for (i=0;i<choices.size();i++){
+				if (sum[i] == 0 || sum[i]==1)
+					b[i]= 0;
+				else 
+					b[i]= sum[i];
+				}
+				int sumOfSquares;
+				for (i=0; i<options.size();i++){
+					 sumOfSquares += (b[i] *b[i]);
+				}
+				
+				score = 1 - ( sumOfSquares/ (students.size()*numOfResponses));
+				return score;
+		}
+			
+		private double scheduleCompatibilityScore (){
+			double score = 0.0;
+			ArrayList hours = new ArrayList();
+			ArrayList options = new ArrayList();
+			int[][] r = new int[students.size()][5];
+			int sumOfDiff;
+			int i;
+			int reqHours;
+			
+			int numOfResponses;
+		
+			for (i=0;i<hours.size();i++){
+				for (int j=0; j<students.size();j++){
+				if (students.hours.get(i).isSelected() == true)
+					r[i][j]= 1;
+				else
+					r[i][j]=0;
+				sumOfDiff += (1-  r[i][j]);
+			}
+			}
+			score = Math.min((sumOfDiff/reqHours), 1);
+			return score;
+			
+		}
+			
+		private double teamComplainceScore(){
+			double sumOfMCQScores = 0, sumOfAOAScores = 0, sumOfSchScores = 0;
+			int i = 0;
+			ArrayList mcq = null, aoa = null, sch = null;
+			int weightMCQ = 0, weightAnyOrAll = 0, weightSchedCompatibility = 0;
+			
+			for (i= 0; i< mcq.size();i++)
+				sumOfMCQScores += multiSelectScore() * weightMCQ;
+				
+				for (i= 0; i< aoa.size();i++)
+					sumOfAOAScores += chooseAnyOrAllScore() * weightAnyOrAll;
+		
+					for (i= 0; i< sch.size();i++)
+						sumOfSchScores += scheduleCompatibilityScore() * weightSchedCompatibility;
+						
+			return sumOfMCQScores + sumOfAOAScores + sumOfSchScores;
+			
+			
+		}
+		
 
 }
 =======
