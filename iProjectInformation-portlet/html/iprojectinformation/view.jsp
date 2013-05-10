@@ -13,7 +13,8 @@ List<iProject> projects = iProjectLocalServiceUtil.getiProjects(0, count);
 <%
 for (iProject prj : projects) {
 %><strong>
-<input type="hidden" id="title" value="<%= prj.getProjectTitle() %>" />
+<input type="hidden" name="title" value="<%= prj.getProjectTitle() %>" />
+<input type="submit" value="Submit" /><%out.println(prj.getProjectTitle());%>
 <a href ="<%=listprojectsURL.toString() %>"><%out.println(prj.getProjectTitle());%></a><br><br>
 <%
 }
