@@ -323,33 +323,13 @@ public  class GeneraluserPortlet extends MVCPortlet  {
 		boolean sendEmail = false;
 
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
-		User user = UserLocalServiceUtil.addUser(creatorUserId,
-                companyId,
-                autoPassword,
-                password1,
-                password2,
-                autoScreenName,
-                screenName,
-                emailAddress,
-                facebookId,
-                openId,
-                locale,
-                firstName,
-                middleName,
-                lastName,
-                prefixId,
-                suffixId,
-                male,
-                birthdayMonth,
-                birthdayDay,
-                birthdayYear,
-                jobTitle,
-                groupIds,
-                organizationIds,
-                roleIds,
-                userGroupIds,
-                sendEmail,
-                serviceContext);
+		User user = UserLocalServiceUtil.addUser(creatorUserId,companyId,autoPassword,password1,password2,
+                autoScreenName,                screenName,                emailAddress,                facebookId,
+                openId,                locale,                firstName,                middleName,
+                lastName,                prefixId,                suffixId,                male,
+                birthdayMonth,                birthdayDay,                birthdayYear,                jobTitle,
+                groupIds,                organizationIds,                roleIds,                userGroupIds,
+                sendEmail,                serviceContext);
 
 		
 		return user;
