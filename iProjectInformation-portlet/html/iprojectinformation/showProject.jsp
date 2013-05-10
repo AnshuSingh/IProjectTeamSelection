@@ -3,7 +3,7 @@
 <%
 int count = iProjectLocalServiceUtil.getiProjectsCount();
 List<iProject> projects = iProjectLocalServiceUtil.getiProjects(0, count);
-String title = request.getParameter("projectTitle");
+String title = request.getParameter("title");
 System.out.println(title);
 %>
 <h1><% out.println(title); %></h1>
