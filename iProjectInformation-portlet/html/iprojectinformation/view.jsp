@@ -17,7 +17,7 @@ for (iProject prj : projects) {
 <input type="submit" value="Submit" /><&nbsp><&nbsp><%out.println(prj.getProjectTitle());%>
 
 <select name="title" label="iProjects">
-	<option value="<%= prj.getProjectTitle() %>" > </option>
+	<option value="<%= prj.getProjectTitle() %>" ><%out.println(prj.getProjectTitle());%></option>
 
 <input type="submit" value="Submit" />
 
