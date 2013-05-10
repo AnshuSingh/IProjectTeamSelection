@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.asu.poly.iProjects.service.iProjectLocalService" class="com.asu.poly.iProjects.service.impl.iProjectLocalServiceImpl" />
+	<bean id="com.asu.poly.iProjects.service.iProjectService" class="com.asu.poly.iProjects.service.impl.iProjectServiceImpl" />
+	<bean id="com.asu.poly.iProjects.service.persistence.iProjectPersistence" class="com.asu.poly.iProjects.service.persistence.iProjectPersistenceImpl" parent="basePersistence" />
+</beans>

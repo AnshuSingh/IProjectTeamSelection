@@ -1,0 +1,17 @@
+button.linkBtn{
+	background-color:#990033;
+	border-radius:6px;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #810e05;
+}button.linkBtn:hover {
+	background-color:#c62d1f;
+}button.linkBtn:active {
+	position:relative;
+	top:1px;
+}
