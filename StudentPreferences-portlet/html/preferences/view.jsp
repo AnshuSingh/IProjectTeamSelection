@@ -1,4 +1,6 @@
 <%@ include file="/html/preferences/init.jsp" %>
+<%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 
 <%
 PortletURL listPreferencesURL = renderResponse.createRenderURL();
@@ -87,6 +89,15 @@ for (Projectdetail project : projects) {
 <br ><br >
 <input type="button" value="Submit" onclick= "return checkDropdowns();">
 </form>
+<br/>
+<br/>
+<h3>2 / 4 pages</h3>
+<div class="right">
+<liferay-portlet:renderURL var="linkURL" portletName="Skills_WAR_Skillsportlet" windowState="maximized" />
+<a href="<%= linkURL%>">Next:Skillset</a>
+</div>
+
+
 <script type="text/javascript">
 		AUI().use('aui-form-validator', function(A) {
 			var t = Date.now();

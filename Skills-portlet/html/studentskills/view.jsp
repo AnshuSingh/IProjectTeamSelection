@@ -1,4 +1,6 @@
 <%@ include file="/html/studentskills/init.jsp"%>
+<%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 
 <h1>Student Skillsets</h1>
 <br />
@@ -250,3 +252,17 @@ Integer abc = i;
 
 <br />
 <br />
+<h3> 3/ 4 pages</h3>
+<div class="right">
+<liferay-portlet:renderURL var="linkURL" portletName="Availability_WAR_Availabilityportlet" windowState="maximized" />
+<a href="<%= linkURL%>">Next:Enter Availabilty</a>
+</div>
+<script type="text/css">
+
+#right{
+position:absolute;
+right:200px;
+float:right;
+width:50%
+}
+</script>
