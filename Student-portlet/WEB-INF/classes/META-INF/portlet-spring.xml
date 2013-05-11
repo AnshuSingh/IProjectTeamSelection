@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.asu.poly.iProjects.student.service.availabilityLocalService" class="com.asu.poly.iProjects.student.service.impl.availabilityLocalServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.availabilityService" class="com.asu.poly.iProjects.student.service.impl.availabilityServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.persistence.availabilityPersistence" class="com.asu.poly.iProjects.student.service.persistence.availabilityPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.iProjects.student.service.preferencesLocalService" class="com.asu.poly.iProjects.student.service.impl.preferencesLocalServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.preferencesService" class="com.asu.poly.iProjects.student.service.impl.preferencesServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.persistence.preferencesPersistence" class="com.asu.poly.iProjects.student.service.persistence.preferencesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.iProjects.student.service.studentLocalService" class="com.asu.poly.iProjects.student.service.impl.studentLocalServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.studentService" class="com.asu.poly.iProjects.student.service.impl.studentServiceImpl" />
+	<bean id="com.asu.poly.iProjects.student.service.persistence.studentPersistence" class="com.asu.poly.iProjects.student.service.persistence.studentPersistenceImpl" parent="basePersistence" />
+</beans>

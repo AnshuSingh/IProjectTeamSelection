@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.asu.poly.iProjects.student.model.availability" />
+	<import class="com.asu.poly.iProjects.student.model.preferences" />
+	<import class="com.asu.poly.iProjects.student.model.student" />
+	<class name="com.asu.poly.iProjects.student.model.impl.availabilityImpl" table="poly_availability">
+		<cache usage="read-write" />
+		<id name="studentid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuriteid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mon4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tue4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wed4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="thu4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fri4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sat4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun8to9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun9to10" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun10to11" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun11to12" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun12to1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun1to2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun2to3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun3to4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sun4to5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.iProjects.student.model.impl.preferencesImpl" table="poly_preferences">
+		<cache usage="read-write" />
+		<id name="studentID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuriteid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="studentasuid" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="focusarea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reasons" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.iProjects.student.model.impl.studentImpl" table="poly_student">
+		<cache usage="read-write" />
+		<id name="studentgeninfoid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="asuriteid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="level" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cgpa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sex" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="loggedinuserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.poly", "com.asu.poly.iProjects.student.service", "Student-portlet");

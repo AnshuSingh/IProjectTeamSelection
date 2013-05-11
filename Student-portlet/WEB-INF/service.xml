@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.asu.poly.iProjects.student">
+	<author>Shruthi</author>
+	<namespace>poly</namespace>
+	<entity name="student" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="studentgeninfoid" type="long" primary="true"></column>
+		<column name="firstName" type="String"></column>
+		<column name="lastName" type="String"></column>
+		<column name="asuriteid" type="String"></column>
+		<column name="department" type="String"></column>
+		<column name="level" type="String"></column>
+		<column name="cgpa" type="String"></column>
+		<column name="sex" type="String"></column>
+		<column name="phone" type="String"></column>
+		<!-- Audit fields -->
+		<column name="loggedinuserId" type="long"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="assigned" type="boolean"></column>
+	</entity>
+	<entity name="availability" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="studentid" type="long" primary="true"></column>
+		<column name="asuriteid" type="String"></column>
+		<!-- UI fields -->
+		<column name="mon8to9" type="String"></column>
+		<column name="mon9to10" type="String"></column>
+		<column name="mon10to11" type="String"></column>
+		<column type="String" name="mon11to12"></column>
+		<column name="mon12to1" type="String"></column>
+		<column name="mon1to2" type="String"></column>
+		<column name="mon2to3" type="String"></column>
+		<column name="mon3to4" type="String"></column>
+		<column name="mon4to5" type="String"></column>
+		<column name="tue8to9" type="String"></column>
+		<column name="tue9to10" type="String"></column>
+		<column name="tue10to11" type="String"></column>
+		<column name="tue11to12" type="String"></column>
+		<column name="tue12to1" type="String"></column>
+		<column name="tue1to2" type="String"></column>
+		<column name="tue2to3" type="String"></column>
+		<column name="tue3to4" type="String"></column>
+		<column name="tue4to5" type="String"></column>
+		<column name="wed8to9" type="String"></column>
+		<column name="wed9to10" type="String"></column>
+		<column name="wed10to11" type="String"></column>
+		<column name="wed11to12" type="String"></column>
+		<column name="wed12to1" type="String"></column>
+		<column name="wed1to2" type="String"></column>
+		<column name="wed2to3" type="String"></column>
+		<column name="wed3to4" type="String"></column>
+		<column name="wed4to5" type="String"></column>
+		<column name="thu8to9" type="String"></column>
+		<column name="thu9to10" type="String"></column>
+		<column name="thu10to11" type="String"></column>
+		<column name="thu11to12" type="String"></column>
+		<column name="thu12to1" type="String"></column>
+		<column name="thu1to2" type="String"></column>
+		<column name="thu2to3" type="String"></column>
+		<column name="thu3to4" type="String"></column>
+		<column name="thu4to5" type="String"></column>
+		<column name="fri8to9" type="String"></column>
+		<column name="fri9to10" type="String"></column>
+		<column name="fri10to11" type="String"></column>
+		<column name="fri11to12" type="String"></column>
+		<column type="String" name="fri12to1"></column>
+		<column name="fri1to2" type="String"></column>
+		<column name="fri2to3" type="String"></column>
+		<column name="fri3to4" type="String"></column>
+		<column name="fri4to5" type="String"></column>
+		<column type="String" name="sat8to9"></column>
+		<column name="sat9to10" type="String"></column>
+		<column name="sat10to11" type="String"></column>
+		<column name="sat11to12" type="String"></column>
+		<column name="sat12to1" type="String"></column>
+		<column name="sat1to2" type="String"></column>
+		<column name="sat2to3" type="String"></column>
+		<column name="sat3to4" type="String"></column>
+		<column name="sat4to5" type="String"></column>
+		<column name="sun8to9" type="String"></column>
+		<column name="sun9to10" type="String"></column>
+		<column name="sun10to11" type="String"></column>
+		<column name="sun11to12" type="String"></column>
+		<column name="sun12to1" type="String"></column>
+		<column name="sun1to2" type="String"></column>
+		<column name="sun2to3" type="String"></column>
+		<column name="sun3to4" type="String"></column>
+		<column name="sun4to5" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	</entity>
+	<entity name="preferences" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="studentID" type="long"></column>
+		<column name="asuriteid" type="String"></column>
+		<!-- UI fields -->
+		<column name="preference1" type="String"></column>
+		<column name="preference2" type="String"></column>
+		<column name="preference3" type="String"></column>
+		<column name="preference4" type="String"></column>
+		<column name="preference5" type="String"></column>
+		<column name="studentasuid" type="long"></column>
+		<column name="focusarea" type="String"></column>
+		<column name="reasons" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+</service-builder>
