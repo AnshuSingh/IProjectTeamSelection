@@ -14,7 +14,10 @@ import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.RoleServiceUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.portal.service.UserLocalServiceUtil;
@@ -52,14 +55,14 @@ public class SubscriberapprovePortlet extends MVCPortlet {
 		
 			count = useraccountLocalServiceUtil.getuseraccountsCount();			
 			 
-			 String[] selectedId = actionRequest.getParameterValues("approveuser");
+			String[] selectedId = actionRequest.getParameterValues("approveuser");
 			for(int i =0; i<selectedId.length; i++){
 				System.out.println(selectedId[i]);
 				useraccount ua = useraccountLocalServiceUtil.fetchuseraccount(Long.parseLong(selectedId[i]));
 				System.out.println("in action class  2A");
 				
 				//adding to the user_ table
-				User createduser = myaddUser(actionRequest,ua);
+				User createduser =	myaddUser(actionRequest,ua);
 				
 				//adding to the student table
 				if(ua.getRole().equalsIgnoreCase("student")){
@@ -72,7 +75,7 @@ public class SubscriberapprovePortlet extends MVCPortlet {
 				}
 				
 				//adding to the faculty table
-				if(ua.getRole().equalsIgnoreCase("faculty")){
+				else if(ua.getRole().equalsIgnoreCase("faculty")){
 					
 					System.out.println("in action class  3");
 					
@@ -81,28 +84,13 @@ public class SubscriberapprovePortlet extends MVCPortlet {
 					System.out.println("in action class  4");
 				}
 				
+				//delete the user entry in the cnua_useraccount table
+				//useraccountLocalServiceUtil.deleteuseraccount(Long.parseLong(selectedId[i]));
+				
 			}
 				  
 			
 			System.out.println("in action class  3");
-			
-		//for( int i = 0; i< count; i++){
-			
-				/*User createduser = myaddUser(actionRequest,subscribers.get(1));		
-		
-				System.out.println("in action class  4");
-				User user1 = UserLocalServiceUtil.addUser(createduser);
-				
-				System.out.println("in action class  5");
-		//}
-		
-		
-				//student student = new student();
-				student student1 = new studentImpl();
-				student newstudent = addMyStudent(actionRequest, student1, subscribers.get(1));
-				
-				Faculty newfaculty = new FacultyImpl();
-				Faculty faculty1 = addnewfaculty(actionRequest, newfaculty, subscribers.get(1));*/
 	}
 	 catch (SystemException e) {
 			// TODO Auto-generated catch block
@@ -224,18 +212,9 @@ public class SubscriberapprovePortlet extends MVCPortlet {
 		
 		System.out.println(employee.getRole());
 		
-		if(employee.getRole().equals("student"))
-		{
-			System.out.println("in add user method 3");
-			//roleIds[0] = 16401;
-			
-			System.out.println("in add user method 4");
-			
-			//System.out.print(roleIds[0]);
-		}
 		
+		//System.out.print(roleIds[0]);
 		
-
 		boolean sendEmail = false;
 
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
@@ -268,6 +247,72 @@ public class SubscriberapprovePortlet extends MVCPortlet {
                 sendEmail,
                 serviceContext);
 
+		if(employee.getRole().equals("student"))
+		{
+			
+			Role roleOLD = RoleLocalServiceUtil.getRole(user.getCompanyId(), "User");
+			Role roleNEW= RoleLocalServiceUtil.getRole(user.getCompanyId(), "ASUStudent");
+			long lRoleOLD = roleOLD.getRoleId();
+			long lRoleNEW = roleNEW.getRoleId();
+			List<Role> roles = RoleServiceUtil.getUserRoles(user.getUserId());
+			for (Role role : roles) {
+			       if (role.getName().equalsIgnoreCase("User")) {
+			             UserLocalServiceUtil.setRoleUsers(lRoleNEW , new long[]{user.getUserId()});
+			             UserLocalServiceUtil.deleteRoleUser(lRoleOLD , user.getUserId());
+			          }
+			}
+			System.out.println("in add user method 3");
+			
+			
+			System.out.println("in add user method 4");
+			
+			//System.out.print(roleIds[0]);
+		}
+		
+		else if(employee.getRole().equals("faculty"))
+		{
+			
+			Role roleOLD = RoleLocalServiceUtil.getRole(user.getCompanyId(), "User");
+			Role roleNEW= RoleLocalServiceUtil.getRole(user.getCompanyId(), "ASUfaculty");
+			long lRoleOLD = roleOLD.getRoleId();
+			long lRoleNEW = roleNEW.getRoleId();
+			List<Role> roles = RoleServiceUtil.getUserRoles(user.getUserId());
+			for (Role role : roles) {
+			       if (role.getName().equalsIgnoreCase("User")) {
+			             UserLocalServiceUtil.setRoleUsers(lRoleNEW , new long[]{user.getUserId()});
+			             UserLocalServiceUtil.deleteRoleUser(lRoleOLD , user.getUserId());
+			          }
+			}
+			System.out.println("in add user method 5");
+			
+			
+			System.out.println("in add user method 6");
+			
+			//System.out.print(roleIds[0]);
+		}
+		
+		else if(employee.getRole().equals("sponsor"))
+		{
+			
+			Role roleOLD = RoleLocalServiceUtil.getRole(user.getCompanyId(), "User");
+			Role roleNEW= RoleLocalServiceUtil.getRole(user.getCompanyId(), "iProjectSponsor");
+			long lRoleOLD = roleOLD.getRoleId();
+			long lRoleNEW = roleNEW.getRoleId();
+			List<Role> roles = RoleServiceUtil.getUserRoles(user.getUserId());
+			for (Role role : roles) {
+			       if (role.getName().equalsIgnoreCase("User")) {
+			             UserLocalServiceUtil.setRoleUsers(lRoleNEW , new long[]{user.getUserId()});
+			             UserLocalServiceUtil.deleteRoleUser(lRoleOLD , user.getUserId());
+			          }
+			}
+			System.out.println("in add user method 5");
+			
+			
+			System.out.println("in add user method 6");
+			
+			//System.out.print(roleIds[0]);
+		}
+		
 		
 		return user;
 	}
