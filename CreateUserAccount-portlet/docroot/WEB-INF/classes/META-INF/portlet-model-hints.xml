@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.CreateUser.model.useraccount">
+		<field name="useraccountId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="eMail" type="String" />
+		<field name="phoneNo" type="String" />
+		<field name="major" type="String" />
+		<field name="cgpa" type="String" />
+		<field name="role" type="String" />
+		<field name="password" type="String" />
+		<field name="asuriteId" type="String" />
+		<field name="level" type="String" />
+		<field name="sex" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>
