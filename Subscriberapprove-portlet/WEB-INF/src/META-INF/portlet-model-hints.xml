@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.subscriberapprove.model.Faculty">
+		<field name="facultyID" type="long" />
+		<field name="asuriteid" type="String" />
+		<field name="facultyName" type="String" />
+		<field name="facultyDept" type="String" />
+		<field name="contact" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+		<field name="assigned" type="boolean" />
+	</model>
+	<model name="com.subscriberapprove.model.student">
+		<field name="studentgeninfoid" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="asuriteid" type="String" />
+		<field name="department" type="String" />
+		<field name="level" type="String" />
+		<field name="cgpa" type="String" />
+		<field name="sex" type="String" />
+		<field name="phone" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assigned" type="boolean" />
+	</model>
+</model-hints>

@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.Sapprove", "com.subscriberapprove.service", "Subscriberapprove-portlet");

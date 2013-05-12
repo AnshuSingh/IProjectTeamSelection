@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.subscriberapprove.model.Faculty" />
+	<import class="com.subscriberapprove.model.student" />
+	<class name="com.subscriberapprove.model.impl.FacultyImpl" table="Sapprove_Faculty">
+		<cache usage="read-write" />
+		<id name="facultyID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuriteid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facultyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facultyDept" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+		<property name="assigned" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.subscriberapprove.model.impl.studentImpl" table="Sapprove_student">
+		<cache usage="read-write" />
+		<id name="studentgeninfoid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="asuriteid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="level" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cgpa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sex" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="assigned" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

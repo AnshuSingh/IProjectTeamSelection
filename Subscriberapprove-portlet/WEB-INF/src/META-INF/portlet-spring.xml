@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.subscriberapprove.service.FacultyLocalService" class="com.subscriberapprove.service.impl.FacultyLocalServiceImpl" />
+	<bean id="com.subscriberapprove.service.FacultyService" class="com.subscriberapprove.service.impl.FacultyServiceImpl" />
+	<bean id="com.subscriberapprove.service.persistence.FacultyPersistence" class="com.subscriberapprove.service.persistence.FacultyPersistenceImpl" parent="basePersistence" />
+	<bean id="com.subscriberapprove.service.studentLocalService" class="com.subscriberapprove.service.impl.studentLocalServiceImpl" />
+	<bean id="com.subscriberapprove.service.studentService" class="com.subscriberapprove.service.impl.studentServiceImpl" />
+	<bean id="com.subscriberapprove.service.persistence.studentPersistence" class="com.subscriberapprove.service.persistence.studentPersistenceImpl" parent="basePersistence" />
+</beans>

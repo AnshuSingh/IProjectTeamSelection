@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.subscriberapprove">
+	<author>Shruthi</author>
+	<namespace>Sapprove</namespace>
+
+	
+		<entity name="student" local-service="true" remote-service="true"  >
+			<!-- PK fields -->
+			<column name="studentgeninfoid" type="long" primary="true"></column>
+			<column name="firstName" type="String"></column>
+			<column name="lastName" type="String"></column>
+			<column name="asuriteid" type="String"></column>
+			<column name="department" type="String"></column>
+			<column name="level" type="String"></column>
+			<column name="cgpa" type="String"></column>
+			<column name="sex" type="String"></column>
+			<column name="phone" type="String"></column>
+			<!-- Audit fields -->
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<column name="assigned" type="boolean"></column>
+		</entity>
+		
+		<entity name="Faculty" local-service="true" remote-service="true" >
+                <!-- PK fields -->
+                <column name="facultyID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="asuriteid" type="String" />
+                <column name="facultyName" type="String" />
+                <column name="facultyDept" type="String" />
+                <column name="contact" type="String" />
+
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+                 <column name="assigned" type="boolean"></column>
+        </entity>
+	
+</service-builder>
