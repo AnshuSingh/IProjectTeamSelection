@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.asu.poly.iProjects.teams">
+	<author>Eshwari</author>
+	<namespace>poly</namespace>
+	<entity name="Team" local-service="true" remote-service="true" table="teams">
+		<!-- PK fields -->
+		<column name="teamID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="projectTitle" type="String"></column>
+		<column name="faculty1" type="String"></column>
+		<column name="faculty2" type="String"></column>
+		<column name="faculty3" type="String"></column>
+		<column name="faculty4" type="String"></column>
+		<column name="student0" type="String"></column>
+		<column name="student1" type="String"></column>
+		<column name="student2" type="String"></column>
+		<column name="student3" type="String"></column>
+		<column name="student4" type="String"></column>
+		<column name="student5" type="String"></column>
+		<column name="student6" type="String"></column>
+		<column name="student7" type="String"></column>
+		<column name="student8" type="String"></column>
+		<column name="student9" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+	<entity name="Faculty" local-service="true" remote-service="true" table="faculty">
+		<!-- PK fields -->
+		<column name="facultyID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="asuid" type="String"></column>
+		<column name="facultyName" type="String"></column>
+		<column name="facultyDept" type="String"></column>
+		<column name="contact" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+		<column name="assigned" type="boolean"></column>
+	</entity>
+</service-builder>
