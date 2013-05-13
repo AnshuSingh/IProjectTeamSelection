@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.NS", "com.NewSubscriber.service", "NewSubscriber-portlet");

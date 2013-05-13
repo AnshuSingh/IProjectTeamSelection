@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.NewSubscriber">
+	<author>Shruthi</author>
+	<namespace>NS</namespace>
+	<entity name="useraccount" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="useraccountId" type="long" primary="true" id-type="identity"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="firstName" type="String"></column>
+		<column name="lastName" type="String"></column>
+		<column name="eMail" type="String"></column>
+		<column name="phoneNo" type="String"></column>
+		<column name="major" type="String"></column>
+		<column name="cgpa" type="String"></column>
+		<column name="role" type="String"></column>
+		<column name="password" type="String"></column>
+		<column name="asuriteId" type="String"></column>
+		<column name="level" type="String"></column>
+		<column name="sex" type="String"></column>
+		<column name="userapproved" type="boolean"></column>
+		<!-- book keeping fields -->
+		<column name="dateAdded" type="Date"></column>
+	</entity>
+</service-builder>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.NewSubscriber.service.useraccountLocalService" class="com.NewSubscriber.service.impl.useraccountLocalServiceImpl" />
+	<bean id="com.NewSubscriber.service.useraccountService" class="com.NewSubscriber.service.impl.useraccountServiceImpl" />
+	<bean id="com.NewSubscriber.service.persistence.useraccountPersistence" class="com.NewSubscriber.service.persistence.useraccountPersistenceImpl" parent="basePersistence" />
+</beans>
