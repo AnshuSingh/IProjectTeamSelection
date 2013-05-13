@@ -31,8 +31,8 @@ import com.subscriberapprove.model.impl.studentImpl;
 import com.subscriberapprove.service.FacultyLocalServiceUtil;
 import com.subscriberapprove.service.studentLocalServiceUtil;
 //import com.subscriberapprove.service.useraccountLocalServiceUtil;
-import com.CreateUser.model.useraccount;
-import com.CreateUser.service.useraccountLocalServiceUtil;
+import com.NewSubscriber.model.useraccount;
+import com.NewSubscriber.service.useraccountLocalServiceUtil;
 
 
 /**
@@ -84,8 +84,11 @@ public class SubscriberapprovePortlet extends MVCPortlet {
 					System.out.println("in action class  4");
 				}
 				
-				//delete the user entry in the cnua_useraccount table
-				//useraccountLocalServiceUtil.deleteuseraccount(Long.parseLong(selectedId[i]));
+				System.out.println("in action class  5");
+				//update the user entry in the ns_useraccount table userapproved column				
+				ua.setUserapproved(true);
+				useraccountLocalServiceUtil.updateuseraccount(ua);
+				System.out.println("in action class  6");
 				
 			}
 				  

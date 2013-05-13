@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ include file="/html/subscriberapprove/init.jsp" %>
-<%@page import="com.CreateUser.model.useraccount" %>
-<%@page import="com.CreateUser.service.useraccountLocalServiceUtil" %>
+<%@page import="com.NewSubscriber.model.useraccount" %>
+<%@page import="com.NewSubscriber.service.useraccountLocalServiceUtil" %>
+
+
 
 <%
 PortletURL updateuserURL = renderResponse.createActionURL();
@@ -23,24 +25,23 @@ List<useraccount> subscribers = useraccountLocalServiceUtil.getuseraccounts(0, c
 <th align="center" width="30%"> Select All </th>
 </tr>
 </table>
+<table width="540" align="center" border="0" cellspacing="10" cellpadding="0" id="mytable">
+
 <%
 for (useraccount subs : subscribers) {	
+	if(!subs.getUserapproved()){
 %>
-
-
-
-<table width="540" align="center" border="0" cellspacing="10" cellpadding="0" id="mytable">
 <tr >
 	<td  width="30%"><%= (((subs.getFirstName()==null)?"":subs.getFirstName()) + "  " +((subs.getLastName()==null)?"":subs.getLastName())) %> </td>
 	<td  width="50%" ><%= ((subs.getRole()==null)?"                  ":subs.getRole()) %> </td>
 	<td  width="50%" style="display:none" id="employeeid" ><%= subs.getUseraccountId() %> </td>
 	<td  width="20%" id="checkboxid"> <input id="<%=subs.getUseraccountId() %>" type="checkbox" name="approveuser" value="<%=subs.getUseraccountId() %>" ></td>
-</tr>
-</table>
 
+</tr>
 <%
 }
+}
 %>
-
+</table>
 <input align="left" name="" type="submit" value="Accept" />
 </form>
